@@ -1,77 +1,111 @@
-import React from 'react';
+import React from "react";
 import logo from '/src/img/kucing.png';
 import { Link as ScrollLink } from 'react-scroll';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem,} from "@nextui-org/react";
 
-const Navbar = () => {
+const AppNavbar = () => {
   const location = useLocation();
   const isHome = location.pathname === '/';
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+  // Daftar menu untuk mobile (sama persis dengan desktop)
+  const menuItems = [
+    { name: "Home", to: isHome ? "home" : "/", isScroll: isHome, offset: 0 },
+    { name: "Services", to: isHome ? "services" : "/Services", isScroll: isHome, offset: -80 },
+    { name: "Portfolio", to: isHome ? "portfolio" : "/Portfolio", isScroll: isHome, offset: -80 },
+    { name: "Event", to: isHome ? "events" : "/Event", isScroll: isHome, offset: -80 },
+    { name: "Contact", to: isHome ? "contact" : "/contact", isScroll: isHome, offset: -80 },
+  ];
 
   return (
-    <nav className="w-full bg-gray-900 text-white px-6 border-b border-gray-700 fixed top-0 z-50">
-      <div className="max-w-screen-xl mx-auto w-full px-6 flex justify-between items-center h-16">
-        <RouterLink to="/">
-          <img src={logo} alt="logo" className="py-2 h-10 cursor-pointer" />
-        </RouterLink>
+    <Navbar
+      isBordered
+      isBlurred
+      classNames={{
+        base: "bg-gray-900/80 backdrop-blur-md border-b border-gray-700",
+        wrapper: "max-w-screen-xl mx-auto px-6",
+      }}
+      onMenuOpenChange={setIsMenuOpen}
+      className="fixed top-0 z-50 w-full"
+    >
+      {/* Brand + Hamburger Toggle */}
+      <NavbarContent>
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="sm:hidden text-white"
+        />
+        <NavbarBrand>
+          <RouterLink to="/">
+            <img src={logo} alt="logo" className="py-2 h-10 cursor-pointer" />
+          </RouterLink>
+        </NavbarBrand>
+      </NavbarContent>
 
-        <div className="flex items-center space-x-8">
-          {isHome ? (
-            <ScrollLink to="home" smooth={true} duration={500} className="cursor-pointer hover:text-yellow-400 transition">
-              Home
-            </ScrollLink>
-          ) : (
-            <RouterLink to="/" className="hover:text-yellow-400 transition">
-              Home
-            </RouterLink>
-          )}
+      {/* Desktop Menu */}
+      <NavbarContent className="hidden sm:flex gap-8" justify="center">
+        {menuItems.map((item, index) => (
+          <NavbarItem key={index}>
+            {item.isScroll ? (
+              <ScrollLink
+                to={item.to}
+                smooth={true}
+                duration={500}
+                offset={item.offset}
+                className="text-white cursor-pointer hover:text-yellow-400 transition"
+              >
+                {item.name}
+              </ScrollLink>
+            ) : (
+              <RouterLink
+                to={item.to}
+                className="text-white hover:text-yellow-400 transition"
+              >
+                {item.name}
+              </RouterLink>
+            )}
+          </NavbarItem>
+        ))}
+      </NavbarContent>
 
-          {/* Services */}
-          {isHome ? (
-            <ScrollLink to="services" smooth={true} duration={500} offset={-80} className="cursor-pointer hover:text-yellow-400 transition">
-              Services
-            </ScrollLink>
-          ) : (
-            <RouterLink to="/Services" className="hover:text-yellow-400 transition">
-              Services
-            </RouterLink>
-          )}
-
-          {/* Portfolio */}
-          {isHome ? (
-            <ScrollLink to="portfolio" smooth={true} duration={500} offset={-80} className="cursor-pointer hover:text-yellow-400 transition">
-              Portfolio
-            </ScrollLink>
-          ) : (
-            <RouterLink to="/Portfolio" className="hover:text-yellow-400 transition">
-              Portfolio
-            </RouterLink>
-          )}
-
-          {/* Events */}
-          {isHome ? (
-            <ScrollLink to="events" smooth={true} duration={500} offset={-80} className="cursor-pointer hover:text-yellow-400 transition">
-              Event
-            </ScrollLink>
-          ) : (
-            <RouterLink to="/Event" className="hover:text-yellow-400 transition">
-              Events
-            </RouterLink>
-          )}
-
-          {/* Contact */}
-          {isHome ? (
-            <ScrollLink to="contact" smooth={true} duration={500} offset={-80} className="cursor-pointer hover:text-yellow-400 transition">
-              Contact
-            </ScrollLink>
-          ) : (
-            <RouterLink to="/contact" className="hover:text-yellow-400 transition">
-              Contact
-            </RouterLink>
-          )}
-        </div>
-      </div>
-    </nav>
+      {/* Mobile Menu — Tidak fullscreen, scrollable, auto-tutup setelah scroll */}
+      <NavbarMenu
+        className="bg-gray-900/95 backdrop-blur-md"
+        classNames={{
+          base: "py-4 max-h-[60vh] overflow-y-auto",
+        }}
+      >
+        {menuItems.map((item, index) => (
+          <NavbarMenuItem key={`${item.name}-${index}`} className="py-2">
+            {item.isScroll ? (
+              <ScrollLink
+                to={item.to}
+                smooth={true}
+                duration={500}
+                offset={item.offset}
+                onClick={() => setIsMenuOpen(false)} // Tutup saat klik
+                onSetActive={() => {
+                  // Pastikan tutup setelah scroll selesai
+                  setTimeout(() => setIsMenuOpen(false), 300);
+                }}
+                className="w-full text-white text-lg hover:text-yellow-400 transition block"
+              >
+                {item.name}
+              </ScrollLink>
+            ) : (
+              <RouterLink
+                to={item.to}
+                onClick={() => setIsMenuOpen(false)} // Tutup saat klik
+                className="w-full text-white text-lg hover:text-yellow-400 transition block"
+              >
+                {item.name}
+              </RouterLink>
+            )}
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
+    </Navbar>
   );
 };
 
-export default Navbar;
+export default AppNavbar;
