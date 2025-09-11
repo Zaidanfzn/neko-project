@@ -83,14 +83,11 @@ export default function EventDetail() {
 
       {/* CTA */}
       <div className="text-center">
-        <a
-          href="https://wa.me/6281210793464"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block text-white px-6 py-3 rounded-lg font-medium bg-yellow-500 hover:bg-yellow-400 transition"
+        <Link to="https://wa.me/089723746234" 
+         className="inline-block text-white px-6 py-3 rounded-lg font-medium bg-yellow-500 hover:bg-yellow-400 transition"
         >
           Daftar Sekarang
-        </a>
+        </Link>
       </div>
     </div>
   );
