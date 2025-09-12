@@ -5,6 +5,8 @@ import Web from "/src/img/web.jpg";
 import Brand from "/src/img/branding.jpg";
 import Wa from "/src/img/wa.png";
 import Email from "/src/img/email.png";
+import Testimonials from "./Testi";
+
 
 const Home = () => {
   // State untuk toggle selengkapnya
@@ -275,6 +277,11 @@ const Home = () => {
             </div>
           </div>
         </section>
+
+        
+        {/* Testi section*/}
+
+        <Testimonials />
 
         {/* Contact Section */}
         <section id="contact" className="w-full py-20 bg-gray-800">
