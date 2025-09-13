@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Alert, Button } from "@heroui/react";
+import React, { useState, useRef } from "react";
+import { Alert } from "@heroui/react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -13,6 +13,9 @@ export default function Contact() {
   const [isAlertVisible, setIsAlertVisible] = useState(false);
   const [isLeaving, setIsLeaving] = useState(false);
 
+  // Ref untuk bagian paling atas halaman
+  const topPageRef = useRef(null);
+
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData({ ...formData, [id]: value });
@@ -23,11 +26,11 @@ export default function Contact() {
   };
 
   const handleCloseAlert = () => {
-    setIsLeaving(true); // animasi keluar
+    setIsLeaving(true);
     setTimeout(() => {
       setIsAlertVisible(false);
-      setIsLeaving(false); // reset
-    }, 500); // durasi animasi sama dengan transition
+      setIsLeaving(false);
+    }, 500);
   };
 
   const handleSubmit = (e) => {
@@ -44,8 +47,17 @@ export default function Contact() {
       return;
     }
 
-    // Tampilkan alert success
+    // alert
     setIsAlertVisible(true);
+
+    // Scroll ke paling atas landing page
+    setTimeout(() => {
+      if (topPageRef.current) {
+        topPageRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }, 100);
 
     // Reset form
     setFormData({
@@ -63,7 +75,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-gray-900 text-white px-6 font-sans">
+    <div ref={topPageRef} className="bg-gray-900 text-white px-6 font-sans">
       <main className="container mx-auto px-4 py-8 pt-20">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
           {/* Form */}
@@ -93,6 +105,7 @@ export default function Contact() {
               </div>
             )}
 
+            {/* Form Input */}
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Nama */}
               <div>
@@ -155,9 +168,7 @@ export default function Contact() {
                   <option value="lainnya">Lainnya</option>
                 </select>
                 {errors.kebutuhan && (
-                  <p className="text-red-500 text-sm mt-1">
-                    {errors.kebutuhan}
-                  </p>
+                  <p className="text-red-500 text-sm mt-1">{errors.kebutuhan}</p>
                 )}
               </div>
 
