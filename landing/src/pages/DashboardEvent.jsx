@@ -1,11 +1,30 @@
-// src/pages/DashboardEvent.jsx
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../component/Sidebar";
 import Header from "../component/Header";
-import { events } from "../data/event";
 
 export default function DashboardEvent() {
   const [openSidebar, setOpenSidebar] = useState(false);
+  const [registrations, setRegistrations] = useState([]);
+
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("registrations") || "[]");
+    setRegistrations(data);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("isAdmin");
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("user");
+    window.location.href = "/";
+  };
+
+  const handleDelete = (indexToDelete) => {
+  if (window.confirm("Yakin ingin menghapus pendaftaran ini?")) {
+    const updated = registrations.filter((_, index) => index !== indexToDelete);
+    localStorage.setItem("registrations", JSON.stringify(updated));
+    setRegistrations(updated);
+    }
+  };
 
   return (
     <div className="flex bg-gray-900 min-h-screen">
@@ -14,56 +33,50 @@ export default function DashboardEvent() {
 
       {/* Content */}
       <main className="flex-1 ml-0 md:ml-64 h-screen overflow-y-auto">
-        <Header onMenuClick={() => setOpenSidebar(true)} onLogout={() => {}} />
+        {/* Header */}
+        <Header onMenuClick={() => setOpenSidebar(true)} onLogout={handleLogout} />
 
         <div className="p-6 space-y-10">
-          <h1 className="text-2xl font-bold text-gray-200 mb-4">
-            Event Tersedia
-          </h1>
+          <h1 className="text-2xl font-bold text-yellow-400">Pendaftaran Event</h1>
 
-          {/* List Event */}
           <div className="bg-gray-800/80 border border-gray-700 rounded-xl p-6 shadow">
-            <div className="overflow-x-auto">
-              <table className="min-w-full divide-y divide-gray-700">
-                <thead>
-                  <tr>
-                    <th className="px-4 py-2 text-left text-sm text-gray-300">
-                      Judul Event
-                    </th>
-                    <th className="px-4 py-2 text-left text-sm text-gray-300">
-                      Kategori
-                    </th>
-                    <th className="px-4 py-2 text-left text-sm text-gray-300">
-                      Deskripsi
-                    </th>
-                    <th className="px-4 py-2 text-left text-sm text-gray-300">
-                      Aksi
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-700">
-                  {events.map((event) => (
-                    <tr key={event.id}>
-                      <td className="px-4 py-2 text-gray-300">{event.title}</td>
-                      <td className="px-4 py-2 text-gray-300">
-                        {event.category}
-                      </td>
-                      <td className="px-4 py-2 text-gray-300">
-                        {event.desc || "-"}
-                      </td>
-                      <td className="px-4 py-2 text-gray-300">
-                        <a
-                          href={`/pendaftaran/${event.id}`}
-                          className="px-3 py-1 bg-blue-600 hover:bg-blue-700 rounded text-white text-sm"
-                        >
-                          Daftar
-                        </a>
-                      </td>
+            {registrations.length === 0 ? (
+              <p className="text-gray-400">Belum ada yang mendaftar event.</p>
+            ) : (
+              <div className="overflow-x-auto">
+                <table className="min-w-full divide-y divide-gray-700">
+                  <thead>
+                    <tr className="bg-gray-700 text-yellow-400 text-left">
+                      <th className="px-4 py-2">Nama</th>
+                      <th className="px-4 py-2">Email</th>
+                      <th className="px-4 py-2">Event</th>
+                      <th className="px-4 py-2">Waktu Daftar</th>
+                      <th className="px-4 py-2">Aksi</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                  </thead>
+                  <tbody className="divide-y divide-gray-700">
+                    {registrations.map((reg, index) => (
+                      <tr key={index} className="hover:bg-gray-700/50">
+                        <td className="px-4 py-2 text-gray-200">{reg.userName}</td>
+                        <td className="px-4 py-2 text-gray-200">{reg.userEmail}</td>
+                        <td className="px-4 py-2 text-gray-200">{reg.eventTitle}</td>
+                        <td className="px-4 py-2 text-gray-400">
+                          {new Date(reg.timestamp).toLocaleString()}
+                        </td>
+                        <td className="px-4 py-2">
+                          <button
+                            onClick={() => handleDelete(index)}
+                            className="bg-red-600 hover:bg-red-500 text-white text-sm px-3 py-1 rounded-md"
+                          >
+                            Hapus
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
           </div>
         </div>
       </main>

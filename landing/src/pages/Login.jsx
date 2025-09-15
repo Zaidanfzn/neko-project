@@ -8,31 +8,33 @@ export default function Login() {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    // Cek jika admin
-    if (email === 'admin@gmail.com' && password === 'admin') {
-      localStorage.setItem('isAdmin', 'true');
-      localStorage.setItem('isLoggedIn', 'true');
-      navigate('/dashboard');
-      return;
-    }
+        // Admin login
+        if (email === 'admin@gmail.com' && password === 'admin') {
+            localStorage.setItem('isAdmin', 'true');
+            localStorage.setItem('isLoggedIn', 'true');
+            localStorage.setItem('user', JSON.stringify({ name: 'Admin', email }));
+            navigate('/dashboard');
+            return;
+        }
 
-    // Cek dari user yang signup
-    const users = JSON.parse(localStorage.getItem('users') || '[]');
-    const matchedUser = users.find(
-      (user) => user.email === email && user.password === password
-    );
+        // Regular user login
+        const users = JSON.parse(localStorage.getItem('users') || '[]');
+        const matchedUser = users.find(
+            (user) => user.email === email && user.password === password
+        );
 
-    if (matchedUser) {
-      localStorage.setItem('isAdmin', 'false');
-      localStorage.setItem('isLoggedIn', 'true');
-      localStorage.setItem('user', JSON.stringify(matchedUser));
-      navigate('/home');
-    } else {
-      alert('Email atau Password salah!');
-    }
+        if (matchedUser) {
+            localStorage.setItem('isAdmin', 'false');
+            localStorage.setItem('isLoggedIn', 'true');
+            localStorage.setItem('user', JSON.stringify(matchedUser));
+            navigate('/'); // redirect ke homepage
+        } else {
+            alert('Email atau Password salah!');
+        }
   };
+
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-900">

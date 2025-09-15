@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -152,9 +155,7 @@ export default function Signup() {
         <p className="text-gray-400 text-sm text-center mt-4">
           Sudah punya akun?{" "}
           <button
-            onClick={() => {
-              ("/Login")
-            }}
+            onClick={() => navigate("/Login")}
             className="text-yellow-400 hover:underline cursor-pointer focus:outline-none"
           >
             Masuk di sini

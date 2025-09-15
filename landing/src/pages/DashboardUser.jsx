@@ -1,14 +1,20 @@
-// src/pages/DashboardUser.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Sidebar from "../component/Sidebar";
 import Header from "../component/Header";
-import { projects } from "../data/portfolio"; // pastikan file ini ada
-import { events } from "../data/event"; // pastikan file ini ada
+import { projects } from "../data/portfolio";
+import { events } from "../data/event";
 
 export default function DashboardUser() {
   const [openSidebar, setOpenSidebar] = useState(false);
+  const [userList, setUserList] = useState([]);
 
-  // hitung statistik
+  // Ambil user dari localStorage saat komponen mount
+  useEffect(() => {
+    const users = JSON.parse(localStorage.getItem("users") || "[]");
+    setUserList(users);
+  }, []);
+
+  // Hitung statistik
   const totalProjects = projects.length;
   const totalEvents = events.length;
   const onlineEvents = events.filter((e) => e.category === "Online").length;
@@ -43,70 +49,35 @@ export default function DashboardUser() {
               <p className="text-3xl font-bold text-green-400">{offlineEvents}</p>
             </div>
           </div>
-
-          {/* Table Project */}
+          
+          {/* Table Users from localStorage */}
           <div className="bg-gray-800/80 border border-gray-700 rounded-xl p-6 shadow">
-          <h2 className="text-lg font-bold text-gray-200 mb-4">
-                Data Portfolio (Projects)
-          </h2>
-          <div className="overflow-x-auto">
-                <table className="min-w-full divide-y divide-gray-700">
-                <thead>
-                    <tr>
-                    <th className="px-4 py-2 text-left text-sm text-gray-300">
-                        Judul
-                    </th>
-                    <th className="px-4 py-2 text-left text-sm text-gray-300">
-                        Kategori
-                    </th>
-                    <th className="px-4 py-2 text-left text-sm text-gray-300">
-                        Nama
-                    </th>
-                    </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-700">
-                    {projects.map((p) => (
-                    <tr key={p.id}>
-                        <td className="px-4 py-2 text-gray-300">{p.title}</td>
-                        <td className="px-4 py-2 text-gray-300">{p.category}</td>
-                        <td className="px-4 py-2 text-gray-300">
-                        {p.detail?.testimoni?.nama || "-"}
-                        </td>
-                    </tr>
-                    ))}
-                </tbody>
-                </table>
-          </div>
-          </div>
-
-          {/* Table Event */}
-          <div className="bg-gray-800/80 border border-gray-700 rounded-xl p-6 shadow">
-            <h2 className="text-lg font-bold text-gray-200 mb-4">Data Event</h2>
+            <h2 className="text-lg font-bold text-gray-200 mb-4">Data Users</h2>
             <div className="overflow-x-auto">
               <table className="min-w-full divide-y divide-gray-700">
                 <thead>
                   <tr>
-                    <th className="px-4 py-2 text-left text-sm text-gray-300">
-                      Judul
-                    </th>
-                    <th className="px-4 py-2 text-left text-sm text-gray-300">
-                      Kategori
-                    </th>
-                    <th className="px-4 py-2 text-left text-sm text-gray-300">
-                      Nama
-                    </th>
+                    <th className="px-4 py-2 text-left text-sm text-gray-300">Nama</th>
+                    <th className="px-4 py-2 text-left text-sm text-gray-300">Email</th>
+                    <th className="px-4 py-2 text-left text-sm text-gray-300">Password</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-700">
-                  {events.map((e) => (
-                    <tr key={e.id}>
-                      <td className="px-4 py-2 text-gray-300">{e.title}</td>
-                      <td className="px-4 py-2 text-gray-300">{e.category}</td>
-                      <td className="px-4 py-2 text-gray-300">
-                        {e.detail?.testimonial?.name || "-"}
+                  {userList.length > 0 ? (
+                    userList.map((user, index) => (
+                      <tr key={index}>
+                        <td className="px-4 py-2 text-gray-300">{user.name}</td>
+                        <td className="px-4 py-2 text-gray-300">{user.email}</td>
+                        <td className="px-4 py-2 text-gray-300">{user.password}</td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan="3" className="text-center text-gray-500 py-4">
+                        Tidak ada user terdaftar.
                       </td>
                     </tr>
-                  ))}
+                  )}
                 </tbody>
               </table>
             </div>

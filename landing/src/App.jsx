@@ -18,7 +18,7 @@ import DashboardAdmin from './pages/DashboardAdmin.jsx'
 import DashboardUser from './pages/DashboardUser.jsx'
 import DashboardEvent from './pages/DashboardEvent.jsx'
 import Signup from './pages/Signup.jsx'
-import Pendaftaran from './pages/Pendaftaran.jsx'
+import EventRegister from "./pages/EventRegister";
 
 function AppContent() {
   const location = useLocation();
@@ -38,6 +38,7 @@ function AppContent() {
         <Route path="/services" element={<Services />} />
         <Route path="/event" element={<Event />} />
         <Route path="/events/:id" element={<EventDetail />} />
+        <Route path="/event-register/:id" element={<EventRegister />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/portfolio/:id" element={<PortfolioDetail />} />
         <Route path="/contact" element={<Contact />} />
@@ -46,7 +47,6 @@ function AppContent() {
         <Route path="/dashboardevent" element={<DashboardEvent />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/pendaftaran" element={<Pendaftaran />} />
 
         {/* User-only route */}
         <Route
