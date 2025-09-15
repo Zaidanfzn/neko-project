@@ -66,7 +66,7 @@ export default function DashboardEvent() {
                         <td className="px-4 py-2">
                           <button
                             onClick={() => handleDelete(index)}
-                            className="bg-red-600 hover:bg-red-500 text-white text-sm px-3 py-1 rounded-md"
+                            className="bg-yellow-400 hover:bg-yellow-500 text-white text-sm px-3 py-1 rounded-md"
                           >
                             Hapus
                           </button>
