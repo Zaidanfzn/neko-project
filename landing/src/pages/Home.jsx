@@ -6,6 +6,7 @@ import Brand from "/src/assets/img/branding.jpg";
 import Wa from "/src/assets/img/wa.png";
 import Email from "/src/assets/img/email.png";
 import Testimonials from "./Testi";
+import { Link as RouterLink } from 'react-router-dom';
 
 
 const Home = () => {
@@ -220,12 +221,12 @@ const Home = () => {
                 </div>
               </div>
             </div>
-
+ 
             <div className="text-center">
-              <Link to="/portfolio">
-              <button className="btn-hover px-8 py-3 rounded-lg font-semibold">
-                Lihat Portfolio Lainnya
-              </button>
+              <Link to="/portfolio#hero">
+                <button className="btn-hover px-8 py-3 rounded-lg font-semibold">
+                  Lihat Portfolio Lainnya
+                </button>
               </Link>
             </div>
           </div>

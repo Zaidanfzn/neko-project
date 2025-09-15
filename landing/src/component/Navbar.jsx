@@ -14,6 +14,7 @@ const AppNavbar = () => {
     { name: "Portfolio", to: isHome ? "portfolio" : "/Portfolio", isScroll: isHome, offset: -80 },
     { name: "Event", to: isHome ? "events" : "/Event", isScroll: isHome, offset: -80 },
     { name: "Contact", to: isHome ? "contact" : "/contact", isScroll: isHome, offset: -80 },
+     { name: "Login", to: "/login", isScroll: false },
   ];
 
   const toggleMenu = () => {

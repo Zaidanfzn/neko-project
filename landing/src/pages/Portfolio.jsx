@@ -26,10 +26,19 @@ export default function Portfolio() {
 
   return (
     <>
+      <section id="#hero" className="w-full bg-gray-900 text-white py-16 text-center">
+        <h1 className="text-3xl md:text-4xl font-bold text-yellow-400">
+          Portfolio Kami
+        </h1>
+        <p className="mt-3 text-gray-300 max-w-2xl mx-auto">
+          Temukan hasil karya terbaik yang pernah kami kerjakan.
+        </p>
+      </section>
+
       {/* Main Content */}
-      <main className="container mx-auto px-6 py-8 pt-20">
+      <main className="container mx-auto px-6 py-8">
         {/* Filter */}
-        <div className="mb-6 flex flex-wrap gap-2">
+        <div className="mb-6 flex flex-wrap gap-2 left">
           {filterCategories.map((category) => (
             <button
               key={category}
@@ -101,20 +110,33 @@ export default function Portfolio() {
       {/* Footer Section */}
       <section className="w-full bg-gray-800 py-10 border-t border-gray-700">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
-          
           {/* Logo & Title */}
           <div className="flex flex-col items-center md:items-start">
             <img src={LogoIcon} alt="Logo" className="w-16 h-16 mb-4" />
-            <h2 className="text-white text-2xl font-semibold mb-2">Creative Neko</h2>
+            <h2 className="text-white text-2xl font-semibold mb-2">
+              Creative Neko
+            </h2>
           </div>
 
           {/* About Us */}
           <div>
             <h4 className="text-white font-semibold mb-3">About Us</h4>
             <ul className="space-y-2 text-white text-sm">
-              <li><a href="#" className="hover:text-yellow-400">Mission</a></li>
-              <li><a href="#" className="hover:text-yellow-400">Team</a></li>
-              <li><a href="#" className="hover:text-yellow-400">Newsletter</a></li>
+              <li>
+                <a href="#" className="hover:text-yellow-400">
+                  Mission
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-yellow-400">
+                  Team
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-yellow-400">
+                  Newsletter
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -122,9 +144,21 @@ export default function Portfolio() {
           <div>
             <h4 className="text-white font-semibold mb-3">Support</h4>
             <ul className="space-y-2 text-white text-sm">
-              <li><a href="#" className="hover:text-yellow-400">Contact</a></li>
-              <li><a href="#" className="hover:text-yellow-400">Refund Policy</a></li>
-              <li><a href="#" className="hover:text-yellow-400">FAQ's</a></li>
+              <li>
+                <a href="#" className="hover:text-yellow-400">
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-yellow-400">
+                  Refund Policy
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-yellow-400">
+                  FAQ's
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -132,9 +166,21 @@ export default function Portfolio() {
           <div>
             <h4 className="text-white font-semibold mb-3">Social</h4>
             <ul className="space-y-2 text-white text-sm">
-              <li><a href="#" className="hover:text-yellow-400">Instagram</a></li>
-              <li><a href="#" className="hover:text-yellow-400">LinkedIn</a></li>
-              <li><a href="#" className="hover:text-yellow-400">YouTube</a></li>
+              <li>
+                <a href="#" className="hover:text-yellow-400">
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-yellow-400">
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-yellow-400">
+                  YouTube
+                </a>
+              </li>
             </ul>
           </div>
         </div>
