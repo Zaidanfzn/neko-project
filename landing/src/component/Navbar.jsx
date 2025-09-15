@@ -1,5 +1,5 @@
 import React from "react";
-import logo from '/src/img/kucing.png';
+import logo from '/src/assets/img/kucing.png';
 import { Link as ScrollLink } from 'react-scroll';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 

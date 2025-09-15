@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Image from "/src/img/kucing.png";
+import Image from "/src/assets/img/kucing.png";
 import { Link } from "react-router-dom";
-import Web from "/src/img/web.jpg";
-import Brand from "/src/img/branding.jpg";
-import Wa from "/src/img/wa.png";
-import Email from "/src/img/email.png";
+import Web from "/src/assets/img/web.jpg";
+import Brand from "/src/assets/img/branding.jpg";
+import Wa from "/src/assets/img/wa.png";
+import Email from "/src/assets/img/email.png";
 import Testimonials from "./Testi";
 
 

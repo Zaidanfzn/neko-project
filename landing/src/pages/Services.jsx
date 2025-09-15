@@ -1,7 +1,7 @@
 import React from 'react';
-import WaIcon from "/src/img/wa.png";
-import EmailIcon from "/src/img/email.png";
-import LogoIcon from "/src/img/kucing.png";
+import WaIcon from "/src/assets/img/wa.png";
+import EmailIcon from "/src/assets/img/email.png";
+import LogoIcon from "/src/assets/img/kucing.png";
 
 export default function Home() {
   return (

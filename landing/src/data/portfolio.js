@@ -1,8 +1,8 @@
-import Iklan from "../img/iklan.jpeg";
-import Kucing from "../img/kucing.png";
-import Whatsapp from "../img/wa.png";
-import Web from "../img/web.jpg";
-import Brand from "../img/branding.jpg";
+import Iklan from "../assets/img/iklan.jpeg";
+import Kucing from "../assets/img/kucing.png";
+import Whatsapp from "../assets/img/wa.png";
+import Web from "../assets/img/web.jpg";
+import Brand from "../assets/img/branding.jpg";
 
 export const projects = [
   {

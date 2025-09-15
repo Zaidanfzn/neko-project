@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { projects } from "/src/data/portfolio";
 import { Pagination } from "@heroui/react";
-import WaIcon from "/src/img/wa.png";
-import EmailIcon from "/src/img/email.png";
-import LogoIcon from "/src/img/kucing.png";
+import WaIcon from "/src/assets/img/wa.png";
+import EmailIcon from "/src/assets/img/email.png";
+import LogoIcon from "/src/assets/img/kucing.png";
 
 export default function Portfolio() {
   const itemsPerPage = 3;

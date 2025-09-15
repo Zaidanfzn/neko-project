@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Pagination } from "@heroui/react";
 import { events } from "/src/data/event";
-import LogoIcon from "/src/img/kucing.png";
+import LogoIcon from "/src/assets/img/kucing.png";
 
 export default function Event() {
   const itemsPerPage = 3;

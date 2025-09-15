@@ -1,6 +1,6 @@
-import Iklan from "../img/iklan.jpeg";
-import Web from "../img/web.jpg";
-import Brand from "../img/branding.jpg";
+import Iklan from "../assets/img/iklan.jpeg";
+import Web from "../assets/img/web.jpg";
+import Brand from "../assets/img/branding.jpg";
 
 export const events = [
   {
