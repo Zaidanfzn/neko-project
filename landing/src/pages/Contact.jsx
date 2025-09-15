@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-import { Alert } from "@heroui/react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -13,7 +12,6 @@ export default function Contact() {
   const [isAlertVisible, setIsAlertVisible] = useState(false);
   const [isLeaving, setIsLeaving] = useState(false);
 
-  // Ref untuk bagian paling atas halaman
   const topPageRef = useRef(null);
 
   const handleChange = (e) => {
@@ -50,7 +48,6 @@ export default function Contact() {
     // alert
     setIsAlertVisible(true);
 
-    // Scroll ke paling atas landing page
     setTimeout(() => {
       if (topPageRef.current) {
         topPageRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -84,24 +81,46 @@ export default function Contact() {
               Hubungi Kami
             </h2>
 
+            {/* Custom Alert */}
             {isAlertVisible && (
               <div
-                className={`transition-all duration-500 ease-in-out transform ${
-                  isLeaving
-                    ? "opacity-0 translate-y-2"
-                    : "opacity-100 translate-y-0"
-                }`}
+                className={`transition-all duration-500 ease-in-out transform mb-6 
+                  bg-gray-800 p-4 rounded-lg border border-gray-700 border-l-4 border-l-yellow-500
+                  ${isLeaving ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"}`}
               >
-                <Alert
-                  color="success"
-                  variant="faded"
-                  title="Pesan Berhasil Dikirim"
-                  description="Pesanmu berhasil terkirim! Kami akan segera menghubungi Anda kembali."
-                  onClose={handleCloseAlert}
-                  className="mb-6 bg-gray-800 border border-yellow-500 text-gray-300"
-                  titleClassName="text-yellow-400 font-semibold"
-                  descriptionClassName="text-gray-300"
-                />
+                <div className="flex items-start justify-between">
+                  <div className="flex items-start space-x-3">
+                    {/* Icon sukses */}
+                    <div className="flex-shrink-0 mt-1 text-green-400">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8.02 8.02a1 1 0 01-1.414 0l-3.02-3.02a1 1 0 111.414-1.414l2.313 2.313 7.313-7.313a1 1 0 011.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-yellow-400 font-semibold">
+                        Pesan Berhasil Dikirim
+                      </h3>
+                      <p className="text-gray-300 text-sm">
+                        Pesanmu berhasil terkirim! Kami akan segera menghubungi Anda kembali.
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    onClick={handleCloseAlert}
+                    className="text-gray-400 hover:text-yellow-400 ml-4"
+                  >
+                    ✕
+                  </button>
+                </div>
               </div>
             )}
 
