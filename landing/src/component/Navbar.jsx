@@ -50,7 +50,6 @@ const AppNavbar = () => {
     { name: "Contact", to: isHome ? "contact" : "/contact", isScroll: isHome, offset: -80 },
   ];
 
-  // 🚫 Jika admin login, jangan tampilkan navbar
   if (isAdmin) return null;
 
   return (

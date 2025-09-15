@@ -1,4 +1,3 @@
-// src/pages/DashboardAdmin.jsx
 import React, { useState } from "react";
 import Sidebar from "../component/Sidebar";
 import Header from "../component/Header";

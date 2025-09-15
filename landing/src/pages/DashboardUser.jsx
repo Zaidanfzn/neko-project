@@ -8,7 +8,7 @@ export default function DashboardUser() {
   const [openSidebar, setOpenSidebar] = useState(false);
   const [userList, setUserList] = useState([]);
 
-  // Ambil user dari localStorage saat komponen mount
+  // Ambil user dari localStorage 
   useEffect(() => {
     const users = JSON.parse(localStorage.getItem("users") || "[]");
     setUserList(users);
@@ -49,8 +49,8 @@ export default function DashboardUser() {
               <p className="text-3xl font-bold text-green-400">{offlineEvents}</p>
             </div>
           </div>
-          
-          {/* Table Users from localStorage */}
+
+          {/* Table Users */}
           <div className="bg-gray-800/80 border border-gray-700 rounded-xl p-6 shadow">
             <h2 className="text-lg font-bold text-gray-200 mb-4">Data Users</h2>
             <div className="overflow-x-auto">

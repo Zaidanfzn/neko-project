@@ -19,7 +19,7 @@ export default function EventDetail() {
     );
   }
 
-  // Helper cek login & user di localStorage
+  // cek login & user di localStorage
   const isUserLoggedIn = () => {
     const isLoggedIn = localStorage.getItem("isLoggedIn");
     const user = localStorage.getItem("user");

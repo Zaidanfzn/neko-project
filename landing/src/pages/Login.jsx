@@ -1,4 +1,3 @@
-// src/pages/Login.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -29,7 +28,7 @@ export default function Login() {
             localStorage.setItem('isAdmin', 'false');
             localStorage.setItem('isLoggedIn', 'true');
             localStorage.setItem('user', JSON.stringify(matchedUser));
-            navigate('/'); // redirect ke homepage
+            navigate('/');
         } else {
             alert('Email atau Password salah!');
         }

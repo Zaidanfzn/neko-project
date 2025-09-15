@@ -14,7 +14,7 @@ export default function Signup() {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    // Clear error when user starts typing
+    
     if (error) setError("");
   };
 
@@ -44,22 +44,22 @@ export default function Signup() {
     }
 
     try {
-      // Ambil existing users atau buat array kosong
+      // Ambil existing users 
       const existingUsers = JSON.parse(localStorage.getItem("users") || "[]");
       
-      // Cek apakah email sudah terdaftar
+      // Cek email 
       const userExists = existingUsers.find(user => user.email === formData.email);
       if (userExists) {
         setError("Email sudah terdaftar");
         return;
       }
 
-      // Tambah user baru dengan ID dan timestamp
+      // Tambah user baru
       const newUser = {
         id: Date.now().toString(),
         name: formData.name,
         email: formData.email,
-        password: formData.password, // Note: Dalam production, password harus di-hash
+        password: formData.password,
         createdAt: new Date().toISOString()
       };
 
