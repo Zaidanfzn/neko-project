@@ -38,9 +38,15 @@ const AppNavbar = () => {
   };
 
   const handleNavClick = (item) => {
-    closeMenu();
-    if (!item.isScroll) navigate(item.to);
+  closeMenu();
+
+  if (!item.isScroll) {
+    navigate(item.to);
+    window.scrollTo(0, 0);
+  }
   };
+
+
 
   const menuItems = [
     { name: "Home", to: isHome ? "home" : "/", isScroll: isHome, offset: 0 },
