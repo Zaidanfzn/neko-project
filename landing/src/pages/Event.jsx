@@ -24,6 +24,15 @@ export default function Event() {
 
   return (
     <>
+    <section id="#hero" className="w-full bg-gray-900 text-white py-16 text-center">
+        <h1 className="text-3xl md:text-4xl font-bold text-yellow-400">
+          Event Kami
+        </h1>
+        <p className="mt-3 text-gray-300 max-w-2xl mx-auto">
+          Berbagai macam event menarik dari kami
+        </p>
+      </section>
+
       {/* Main Content */}
       <div className="bg-gray-900 text-white px-6 font-sans">
         <div className="container mx-auto px-6 py-8 pt-20 max-w-6xl">
