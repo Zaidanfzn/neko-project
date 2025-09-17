@@ -1,18 +1,16 @@
 import React, { useState } from "react";
 import Image from "/src/assets/img/kucing.png";
 import { Link, useNavigate } from "react-router-dom";
-import Web from "/src/assets/img/web.jpg";
-import Brand from "/src/assets/img/branding.jpg";
 import Wa from "/src/assets/img/wa.png";
 import Email from "/src/assets/img/email.png";
 import Testimonials from "./Testi";
+import { projects } from "/src/data/portfolio";
 
 const Home = () => {
   const navigate = useNavigate();
   const [showBranding, setShowBranding] = useState(false);
   const [showMarketing, setShowMarketing] = useState(false);
 
-  // Dummy text
   const brandingText = `
 Creative Neko Project membantu UMKM membangun identitas merek (branding)
 yang kuat dan berkesan. Kami mendampingi mulai dari perencanaan strategi brand,
@@ -26,18 +24,20 @@ menjangkau pelanggan melalui media online. Mulai dari pengelolaan media sosial,
 pembuatan kampanye digital, hingga optimasi pemasaran online agar penjualan meningkat.
 `;
 
-  // Dummy function menutup menu (kalau ada menu mobile)
   const closeMenu = () => {
-    // nanti isi logika menutup menu mobile jika ada
+    // Placeholder untuk close menu
   };
 
-  // untuk navigasi tombol internal
   const handleNavClick = (item) => {
     closeMenu();
     if (!item.isScroll) {
       navigate(item.to);
       window.scrollTo(0, 0);
     }
+  };
+
+  const handleClick = (id) => {
+    handleNavClick({ to: `/portfolio/${id}`, isScroll: false });
   };
 
   return (
@@ -190,34 +190,35 @@ pembuatan kampanye digital, hingga optimasi pemasaran online agar penjualan meni
               Portfolio
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-              <div className="relative border border-gray-700 h-64 bg-gray-800 rounded-lg overflow-hidden group cursor-pointer hover:border-yellow-400 transition-colors duration-300">
-                <img src={Web} alt="Project Satu" className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className="text-lg font-semibold text-yellow-400">Website Toko Online</h3>
+              {projects.slice(0, 3).map((project) => (
+                <div
+                  key={project.id}
+                  onClick={() => handleClick(project.id)}
+                  className="relative border border-gray-700 h-64 bg-gray-800 rounded-lg overflow-hidden group cursor-pointer hover:border-yellow-400 transition-colors duration-300"
+                >
+                  <img
+                    src={project.img}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 className="text-lg font-semibold text-yellow-400">
+                      {project.title}
+                    </h3>
+                  </div>
                 </div>
-              </div>
-              <div className="relative border border-gray-700 h-64 bg-gray-800 rounded-lg overflow-hidden group cursor-pointer hover:border-yellow-400 transition-colors duration-300">
-                <img src={Image} alt="Project Dua" className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className="text-lg font-semibold text-yellow-400">Kampanye Digital Produk Baru</h3>
-                </div>
-              </div>
-              <div className="relative border border-gray-700 h-64 bg-gray-800 rounded-lg overflow-hidden group cursor-pointer hover:border-yellow-400 transition-colors duration-300">
-                <img src={Brand} alt="Project Tiga" className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className="text-lg font-semibold text-yellow-400">Rebranding Identitas Brand</h3>
-                </div>
-              </div>
+              ))}
             </div>
+
             <div className="text-center">
               <button
-                  onClick={() =>
-                    handleNavClick({ to: "/portfolio", isScroll: false })
-                  }
-                  className="btn-hover px-6 py-2 rounded-lg font-semibold"
-                >
-                  Lihat Portfolio lainnya
-                </button>
+                onClick={() =>
+                  handleNavClick({ to: "/portfolio", isScroll: false })
+                }
+                className="btn-hover px-6 py-2 rounded-lg font-semibold"
+              >
+                Lihat portfolio lainnya
+              </button>
             </div>
           </div>
         </section>
@@ -264,7 +265,7 @@ pembuatan kampanye digital, hingga optimasi pemasaran online agar penjualan meni
                   }
                   className="btn-hover px-6 py-2 rounded-lg font-semibold"
                 >
-                  Learn More
+                  Lihat event lainnya
                 </button>
             </div>
           </div>
