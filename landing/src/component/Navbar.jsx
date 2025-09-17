@@ -183,7 +183,7 @@ const AppNavbar = () => {
               {user ? (
                 <button
                   onClick={() => setShowConfirm(true)}
-                  className="text-white hover:text-red-400 transition"
+                  className="text-white hover:text-yellow-400 transition"
                 >
                   Logout
                 </button>

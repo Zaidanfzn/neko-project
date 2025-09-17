@@ -103,15 +103,21 @@ pembuatan kampanye digital, hingga optimasi pemasaran online agar penjualan meni
                 memiliki <strong>Creative Neko Academy</strong> sebagai pusat
                 pelatihan dan pengembangan kapasitas UMKM.
               </p>
-              <a
-                href="https://wa.me/0891234567"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <button className="btn-hover px-8 py-3 rounded-lg font-semibold">
-                  Hubungi via WhatsApp
-                </button>
-              </a>
+              <button
+                onClick={() => {
+                const isLoggedIn = localStorage.getItem("isLoggedIn");
+                const user = localStorage.getItem("user");
+
+                if (isLoggedIn === "true" && user) {
+                  window.open("https://wa.me/0891234567", "_blank");
+                } else {
+                  navigate("/login");
+                }
+              }}
+              className="btn-hover px-8 py-3 rounded-lg font-semibold"
+            >
+              Hubungi via WhatsApp
+            </button>
             </div>
             <div className="flex justify-center lg:justify-end">
               <img src={Image} alt="Logo Creative Neko" className="py-2" />

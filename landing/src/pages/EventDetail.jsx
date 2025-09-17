@@ -35,6 +35,20 @@ export default function EventDetail() {
   };
 
   return (
+    <>
+    <style>
+        {`
+        .btn-hover {
+          background-color: #FFD700;
+          color: black;
+          transition: all 0.3s ease;
+        }
+        .btn-hover:hover {
+          background-color: #fbbf24;
+          box-shadow: 0 0 15px #fbbf24;
+        }
+      `}
+      </style>
     <div className="container mx-auto px-6 py-8 pt-20 text-white space-y-8">
       {/* Judul & Deskripsi Singkat */}
       <div className="bg-gray-800 p-6 rounded-lg border border-gray-700">
@@ -112,11 +126,12 @@ export default function EventDetail() {
       <div className="text-center">
         <button
           onClick={handleRegister}
-          className="inline-block text-white px-6 py-3 rounded-lg font-medium bg-yellow-500 hover:bg-yellow-400 transition"
+          className="btn-hover px-8 py-3 rounded-lg font-semibold"
         >
           Daftar Sekarang
         </button>
       </div>
     </div>
+    </>
   );
 }

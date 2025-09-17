@@ -1,8 +1,10 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { projects } from "/src/data/portfolio";
 
 export default function PortfolioDetail() {
+
+  const navigate = useNavigate();
   const { id } = useParams();
   const project = projects.find((p) => p.id === parseInt(id));
 
@@ -12,6 +14,20 @@ export default function PortfolioDetail() {
   const { masalah, solusi, hasil, galeri, testimoni } = detail;
 
   return (
+    <>
+    <style>
+        {`
+        .btn-hover {
+          background-color: #FFD700;
+          color: black;
+          transition: all 0.3s ease;
+        }
+        .btn-hover:hover {
+          background-color: #fbbf24;
+          box-shadow: 0 0 15px #fbbf24;
+        }
+      `}
+      </style>
     <div className="container mx-auto px-6 py-8 pt-20">
       <section className="mb-10 bg-gray-800 p-6 rounded-lg">
         <h1 className="text-3xl font-bold text-yellow-400 mb-4">{title}</h1>
@@ -69,6 +85,33 @@ export default function PortfolioDetail() {
        </blockquote>
       </section>
 
+      {/* CTA Tanya tentang Proyek */}
+      <section className="bg-gray-800 p-6 rounded-lg text-center">
+        <h2 className="text-yellow-400 text-xl font-semibold mb-4">
+          Tertarik dengan Proyek Ini?
+        </h2>
+        <p className="text-gray-300 max-w-2xl mx-auto mb-6 leading-relaxed">
+          Punya pertanyaan seputar proyek ini atau ingin tahu bagaimana kami bisa
+          membantu bisnis Anda dengan pendekatan serupa? Tim kami siap berdiskusi
+          dengan Anda. Konsultasi gratis dan tanpa komitmen!
+        </p>
+        <button
+          onClick={() => {
+            const isLoggedIn = localStorage.getItem("isLoggedIn");
+            const user = localStorage.getItem("user");
+
+            if (isLoggedIn === "true" && user) {
+              window.open("https://wa.me/0891234567", "_blank");
+            } else {
+              navigate("/login");
+            }
+          }}
+          className="btn-hover px-8 py-3 rounded-lg font-semibold"
+        >
+          Tanya Tentang Proyek Ini
+        </button>
+      </section>
     </div>
+  </>
   );
 }

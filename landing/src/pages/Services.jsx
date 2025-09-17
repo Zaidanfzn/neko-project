@@ -1,9 +1,56 @@
 import React from "react";
 import LogoIcon from "/src/assets/img/kucing.png";
+import { useNavigate } from "react-router-dom";
 
 export default function Services() {
+   const navigate = useNavigate();
+   
   return (
   <>
+  <style>
+        {`
+        .hover-effect {
+          position: relative;
+          overflow: hidden;
+        }
+        .hover-effect::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background-color: #FFD700;
+          transition: width 0.3s ease;
+        }
+        .hover-effect:hover::after {
+          width: 100%;
+        }
+        .hover-effect h3 {
+          color: #FFD700;
+          transition: color 0.3s ease;
+        }
+        .hover-effect:hover h3 {
+          color: #fff;
+        }
+        .card-hover {
+          transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 20px #000000;
+        }
+        .btn-hover {
+          background-color: #FFD700;
+          color: black;
+          transition: all 0.3s ease;
+        }
+        .btn-hover:hover {
+          background-color: #fbbf24;
+          box-shadow: 0 0 15px #fbbf24;
+        }
+      `}
+      </style>
     <div className="container mx-auto pt-20 px-6 py-10 space-y-12 max-w-7xl">
       {/* Heading */}
       <section className="text-center">
@@ -84,12 +131,21 @@ export default function Services() {
           Hubungi Creative Neko Project sekarang untuk sesi konsultasi gratis dan
           temukan solusi kreatif yang sesuai dengan kebutuhan bisnis Anda.
         </p>
-        <a
-          href="https://wa.me/6281210793464"
-          className="inline-block bg-yellow-500 text-black px-6 py-2 rounded-md mt-4 btn-hover"
-        >
-          Konsultasi Sekarang
-        </a>
+        <button
+                onClick={() => {
+                const isLoggedIn = localStorage.getItem("isLoggedIn");
+                const user = localStorage.getItem("user");
+
+                if (isLoggedIn === "true" && user) {
+                  window.open("https://wa.me/0891234567", "_blank");
+                } else {
+                  navigate("/login");
+                }
+              }}
+              className="btn-hover px-8 py-3 rounded-lg font-semibold"
+            >
+              Konsultasi Sekarang
+        </button>
       </section>
     </div>
     {/* Footer Section */}
