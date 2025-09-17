@@ -5,51 +5,48 @@ import Brand from "../assets/img/branding.jpg";
 export const events = [
   {
     id: 1,
-    title: "Webinar Digital Marketing",
+    title: "Webinar Digital Marketing UMKM",
     date: "15 April 2025",
     time: "19:00 WIB",
     place: "Online via Zoom",
-    img: Brand,
+    img: Web,
     category: "Online",
     detail: {
-      description: "Pelajari strategi digital marketing terkini...",
+      description: "Pelajari strategi digital marketing terkini untuk UMKM.",
       agenda: [
         "19:00 - 19:15: Pembukaan & Sambutan",
-        "19:15 - 20:00: Strategi Digital Marketing 2025",
+        "19:15 - 20:00: Strategi Digital Marketing",
         "20:00 - 20:30: Q&A & Diskusi",
-        "20:30 - 21:00: Penutupan & Giveaway",
+        "20:30 - 21:00: Penutupan",
       ],
-      speaker: "Budi Santoso, CEO Toko-Online.id",
+      speaker: "Budi Santoso",
       fee: "Gratis",
       testimonial: {
-        quote:
-          "Materinya sangat relevan, saya jadi paham strategi promosi online!",
-        name: "Fulan, Pengusaha Kecil",
+        quote: "Materinya relevan dan praktis!",
+        name: "Fulan",
       },
     },
   },
   {
     id: 2,
-    title: "Workshop UI/UX Design",
-    date: "20 April 2025",
-    time: "10:00 WIB",
-    place: "Offline di Jakarta",
-    img: Web,
+    title: "Workshop Branding & Identitas Visual",
+    date: "22 April 2025",
+    time: "09:00 WIB",
+    place: "Offline Jakarta",
+    img: Brand,
     category: "Offline",
     detail: {
-      description: "Belajar langsung praktik membuat UI/UX modern...",
+      description: "Workshop intensif branding untuk UMKM.",
       agenda: [
-        "10:00 - 11:00: Pengenalan UI/UX",
-        "11:00 - 12:30: Hands-on Design",
-        "13:00 - 14:30: User Testing",
-        "14:30 - 15:00: Sharing & Closing",
+        "09:00 - 10:00: Pengenalan Branding",
+        "10:00 - 12:00: Praktik Desain Visual",
+        "13:00 - 15:00: Konsultasi Personal",
       ],
-      speaker: "Siti Aminah, Senior UX Designer",
+      speaker: "Siti Aminah",
       fee: "Rp 250.000",
       testimonial: {
-        quote:
-          "Workshop ini membuka wawasan saya tentang pentingnya user experience.",
-        name: "Rizky, Mahasiswa",
+        quote: "Saya jadi lebih paham membangun identitas brand.",
+        name: "Rina",
       },
     },
   },
@@ -58,553 +55,150 @@ export const events = [
     title: "Creative Hackathon",
     date: "25 April 2025",
     time: "09:00 WIB",
-    place: "Offline di Bandung",
+    place: "Offline Bandung",
     img: Iklan,
     category: "Offline",
     detail: {
-      description:
-        "Hackathon untuk ide kreatif membangun solusi digital...",
-      agenda: [
-        "09:00 - 10:00: Registrasi & Pembukaan",
-        "10:00 - 17:00: Hacking Time",
-        "17:00 - 18:00: Presentasi & Penjurian",
-      ],
+      description: "Hackathon untuk ide kreatif membangun solusi digital UMKM.",
+      agenda: ["09:00 - 10:00: Registrasi", "10:00 - 17:00: Hacking Time"],
       speaker: "Tim Juri Startup Bandung",
       fee: "Gratis",
       testimonial: {
-        quote:
-          "Hackathon ini seru banget, saya ketemu banyak teman baru!",
-        name: "Andi, Developer",
+        quote: "Seru dan menambah relasi baru!",
+        name: "Andi",
       },
     },
   },
   {
     id: 4,
-    title: "Webinar Digital Marketing",
-    date: "15 April 2025",
+    title: "Webinar E-commerce Strategy",
+    date: "5 Mei 2025",
     time: "19:00 WIB",
-    place: "Online via Zoom",
-    img: Brand,
+    place: "Online",
+    img: Web,
     category: "Online",
     detail: {
-      description: "Pelajari strategi digital marketing terkini...",
-      agenda: [
-        "19:00 - 19:15: Pembukaan & Sambutan",
-        "19:15 - 20:00: Strategi Digital Marketing 2025",
-        "20:00 - 20:30: Q&A & Diskusi",
-        "20:30 - 21:00: Penutupan & Giveaway",
-      ],
-      speaker: "Budi Santoso, CEO Toko-Online.id",
+      description: "Strategi penjualan di marketplace & website sendiri.",
+      agenda: ["19:00 - 19:30: Trends E-commerce", "19:30 - 20:30: Tips Praktis"],
+      speaker: "Rani Prasetyo",
       fee: "Gratis",
       testimonial: {
-        quote:
-          "Materinya sangat relevan, saya jadi paham strategi promosi online!",
-        name: "Fulan, Pengusaha Kecil",
+        quote: "Bermanfaat banget buat bisnis saya!",
+        name: "Ali",
       },
     },
   },
-  
   {
     id: 5,
-    title: "Webinar Digital Marketing",
-    date: "15 April 2025",
-    time: "19:00 WIB",
-    place: "Online via Zoom",
+    title: "Workshop Copywriting untuk UMKM",
+    date: "8 Mei 2025",
+    time: "10:00 WIB",
+    place: "Offline Surabaya",
     img: Brand,
-    category: "Online",
+    category: "Offline",
     detail: {
-      description: "Pelajari strategi digital marketing terkini...",
-      agenda: [
-        "19:00 - 19:15: Pembukaan & Sambutan",
-        "19:15 - 20:00: Strategi Digital Marketing 2025",
-        "20:00 - 20:30: Q&A & Diskusi",
-        "20:30 - 21:00: Penutupan & Giveaway",
-      ],
-      speaker: "Budi Santoso, CEO Toko-Online.id",
-      fee: "Gratis",
+      description: "Pelatihan copywriting untuk meningkatkan penjualan.",
+      agenda: ["10:00 - 12:00: Teori Copywriting", "13:00 - 15:00: Praktik"],
+      speaker: "Nadia",
+      fee: "Rp 150.000",
       testimonial: {
-        quote:
-          "Materinya sangat relevan, saya jadi paham strategi promosi online!",
-        name: "Fulan, Pengusaha Kecil",
+        quote: "Copywriting saya jadi lebih menarik.",
+        name: "Salsa",
       },
     },
   },
-  
   {
     id: 6,
-    title: "Creative Hackathon",
-    date: "25 April 2025",
+    title: "Webinar Instagram Marketing",
+    date: "12 Mei 2025",
+    time: "19:00 WIB",
+    place: "Online",
+    img: Web,
+    category: "Online",
+    detail: {
+      description: "Strategi promosi produk di Instagram.",
+      agenda: ["19:00 - 19:30: Konten Menarik", "19:30 - 20:00: Algoritma IG"],
+      speaker: "Bima",
+      fee: "Gratis",
+      testimonial: {
+        quote: "Tipsnya langsung bisa dipraktekkan.",
+        name: "Lina",
+      },
+    },
+  },
+  {
+    id: 7,
+    title: "Workshop Fotografi Produk",
+    date: "20 Mei 2025",
     time: "09:00 WIB",
-    place: "Offline di Bandung",
+    place: "Offline Yogyakarta",
     img: Iklan,
     category: "Offline",
     detail: {
-      description:
-        "Hackathon untuk ide kreatif membangun solusi digital...",
-      agenda: [
-        "09:00 - 10:00: Registrasi & Pembukaan",
-        "10:00 - 17:00: Hacking Time",
-        "17:00 - 18:00: Presentasi & Penjurian",
-      ],
-      speaker: "Tim Juri Startup Bandung",
-      fee: "Gratis",
+      description: "Belajar foto produk UMKM dengan profesional.",
+      agenda: ["09:00 - 11:00: Teori Foto", "11:00 - 13:00: Praktik"],
+      speaker: "Andrian",
+      fee: "Rp 200.000",
       testimonial: {
-        quote:
-          "Hackathon ini seru banget, saya ketemu banyak teman baru!",
-        name: "Andi, Developer",
-      },
-    },
-  },{
-    id: 7,
-    title: "Webinar Digital Marketing",
-    date: "15 April 2025",
-    time: "19:00 WIB",
-    place: "Online via Zoom",
-    img: Brand,
-    category: "Online",
-    detail: {
-      description: "Pelajari strategi digital marketing terkini...",
-      agenda: [
-        "19:00 - 19:15: Pembukaan & Sambutan",
-        "19:15 - 20:00: Strategi Digital Marketing 2025",
-        "20:00 - 20:30: Q&A & Diskusi",
-        "20:30 - 21:00: Penutupan & Giveaway",
-      ],
-      speaker: "Budi Santoso, CEO Toko-Online.id",
-      fee: "Gratis",
-      testimonial: {
-        quote:
-          "Materinya sangat relevan, saya jadi paham strategi promosi online!",
-        name: "Fulan, Pengusaha Kecil",
+        quote: "Foto produk saya sekarang lebih bagus.",
+        name: "Nana",
       },
     },
   },
   {
     id: 8,
-    title: "Workshop UI/UX Design",
-    date: "20 April 2025",
-    time: "10:00 WIB",
-    place: "Offline di Jakarta",
+    title: "Webinar Marketplace Optimization",
+    date: "25 Mei 2025",
+    time: "19:00 WIB",
+    place: "Online",
     img: Web,
-    category: "Offline",
+    category: "Online",
     detail: {
-      description: "Belajar langsung praktik membuat UI/UX modern...",
-      agenda: [
-        "10:00 - 11:00: Pengenalan UI/UX",
-        "11:00 - 12:30: Hands-on Design",
-        "13:00 - 14:30: User Testing",
-        "14:30 - 15:00: Sharing & Closing",
-      ],
-      speaker: "Siti Aminah, Senior UX Designer",
-      fee: "Rp 250.000",
+      description: "Optimasi toko UMKM di marketplace.",
+      agenda: ["19:00 - 19:45: SEO Marketplace", "19:45 - 20:15: Tips Diskon"],
+      speaker: "Taufik",
+      fee: "Gratis",
       testimonial: {
-        quote:
-          "Workshop ini membuka wawasan saya tentang pentingnya user experience.",
-        name: "Rizky, Mahasiswa",
+        quote: "Toko saya lebih ramai pembeli.",
+        name: "Udin",
       },
     },
   },
   {
     id: 9,
-    title: "Creative Hackathon",
-    date: "25 April 2025",
+    title: "Workshop Desain Kemasan",
+    date: "30 Mei 2025",
     time: "09:00 WIB",
-    place: "Offline di Bandung",
-    img: Iklan,
+    place: "Offline Semarang",
+    img: Brand,
     category: "Offline",
     detail: {
-      description:
-        "Hackathon untuk ide kreatif membangun solusi digital...",
-      agenda: [
-        "09:00 - 10:00: Registrasi & Pembukaan",
-        "10:00 - 17:00: Hacking Time",
-        "17:00 - 18:00: Presentasi & Penjurian",
-      ],
-      speaker: "Tim Juri Startup Bandung",
-      fee: "Gratis",
+      description: "Mendesain kemasan produk yang menarik dan fungsional.",
+      agenda: ["09:00 - 10:00: Trend Kemasan", "10:00 - 12:00: Praktik"],
+      speaker: "Dewi",
+      fee: "Rp 180.000",
       testimonial: {
-        quote:
-          "Hackathon ini seru banget, saya ketemu banyak teman baru!",
-        name: "Andi, Developer",
+        quote: "Kemasan produk saya jadi lebih menarik.",
+        name: "Asep",
       },
     },
   },
   {
     id: 10,
-    title: "Webinar Digital Marketing",
-    date: "15 April 2025",
+    title: "Webinar TikTok Ads",
+    date: "5 Juni 2025",
     time: "19:00 WIB",
-    place: "Online via Zoom",
-    img: Brand,
-    category: "Online",
-    detail: {
-      description: "Pelajari strategi digital marketing terkini...",
-      agenda: [
-        "19:00 - 19:15: Pembukaan & Sambutan",
-        "19:15 - 20:00: Strategi Digital Marketing 2025",
-        "20:00 - 20:30: Q&A & Diskusi",
-        "20:30 - 21:00: Penutupan & Giveaway",
-      ],
-      speaker: "Budi Santoso, CEO Toko-Online.id",
-      fee: "Gratis",
-      testimonial: {
-        quote:
-          "Materinya sangat relevan, saya jadi paham strategi promosi online!",
-        name: "Fulan, Pengusaha Kecil",
-      },
-    },
-  },
-  
-  {
-    id: 11,
-    title: "Webinar Digital Marketing",
-    date: "15 April 2025",
-    time: "19:00 WIB",
-    place: "Online via Zoom",
-    img: Brand,
-    category: "Online",
-    detail: {
-      description: "Pelajari strategi digital marketing terkini...",
-      agenda: [
-        "19:00 - 19:15: Pembukaan & Sambutan",
-        "19:15 - 20:00: Strategi Digital Marketing 2025",
-        "20:00 - 20:30: Q&A & Diskusi",
-        "20:30 - 21:00: Penutupan & Giveaway",
-      ],
-      speaker: "Budi Santoso, CEO Toko-Online.id",
-      fee: "Gratis",
-      testimonial: {
-        quote:
-          "Materinya sangat relevan, saya jadi paham strategi promosi online!",
-        name: "Fulan, Pengusaha Kecil",
-      },
-    },
-  },
-  
-  {
-    id: 12,
-    title: "Creative Hackathon",
-    date: "25 April 2025",
-    time: "09:00 WIB",
-    place: "Offline di Bandung",
-    img: Iklan,
-    category: "Offline",
-    detail: {
-      description:
-        "Hackathon untuk ide kreatif membangun solusi digital...",
-      agenda: [
-        "09:00 - 10:00: Registrasi & Pembukaan",
-        "10:00 - 17:00: Hacking Time",
-        "17:00 - 18:00: Presentasi & Penjurian",
-      ],
-      speaker: "Tim Juri Startup Bandung",
-      fee: "Gratis",
-      testimonial: {
-        quote:
-          "Hackathon ini seru banget, saya ketemu banyak teman baru!",
-        name: "Andi, Developer",
-      },
-    },
-  },{
-    id: 13,
-    title: "Webinar Digital Marketing",
-    date: "15 April 2025",
-    time: "19:00 WIB",
-    place: "Online via Zoom",
-    img: Brand,
-    category: "Online",
-    detail: {
-      description: "Pelajari strategi digital marketing terkini...",
-      agenda: [
-        "19:00 - 19:15: Pembukaan & Sambutan",
-        "19:15 - 20:00: Strategi Digital Marketing 2025",
-        "20:00 - 20:30: Q&A & Diskusi",
-        "20:30 - 21:00: Penutupan & Giveaway",
-      ],
-      speaker: "Budi Santoso, CEO Toko-Online.id",
-      fee: "Gratis",
-      testimonial: {
-        quote:
-          "Materinya sangat relevan, saya jadi paham strategi promosi online!",
-        name: "Fulan, Pengusaha Kecil",
-      },
-    },
-  },
-  {
-    id: 14,
-    title: "Workshop UI/UX Design",
-    date: "20 April 2025",
-    time: "10:00 WIB",
-    place: "Offline di Jakarta",
+    place: "Online",
     img: Web,
-    category: "Offline",
-    detail: {
-      description: "Belajar langsung praktik membuat UI/UX modern...",
-      agenda: [
-        "10:00 - 11:00: Pengenalan UI/UX",
-        "11:00 - 12:30: Hands-on Design",
-        "13:00 - 14:30: User Testing",
-        "14:30 - 15:00: Sharing & Closing",
-      ],
-      speaker: "Siti Aminah, Senior UX Designer",
-      fee: "Rp 250.000",
-      testimonial: {
-        quote:
-          "Workshop ini membuka wawasan saya tentang pentingnya user experience.",
-        name: "Rizky, Mahasiswa",
-      },
-    },
-  },
-  {
-    id: 15,
-    title: "Creative Hackathon",
-    date: "25 April 2025",
-    time: "09:00 WIB",
-    place: "Offline di Bandung",
-    img: Iklan,
-    category: "Offline",
-    detail: {
-      description:
-        "Hackathon untuk ide kreatif membangun solusi digital...",
-      agenda: [
-        "09:00 - 10:00: Registrasi & Pembukaan",
-        "10:00 - 17:00: Hacking Time",
-        "17:00 - 18:00: Presentasi & Penjurian",
-      ],
-      speaker: "Tim Juri Startup Bandung",
-      fee: "Gratis",
-      testimonial: {
-        quote:
-          "Hackathon ini seru banget, saya ketemu banyak teman baru!",
-        name: "Andi, Developer",
-      },
-    },
-  },
-  {
-    id: 16,
-    title: "Webinar Digital Marketing",
-    date: "15 April 2025",
-    time: "19:00 WIB",
-    place: "Online via Zoom",
-    img: Brand,
     category: "Online",
     detail: {
-      description: "Pelajari strategi digital marketing terkini...",
-      agenda: [
-        "19:00 - 19:15: Pembukaan & Sambutan",
-        "19:15 - 20:00: Strategi Digital Marketing 2025",
-        "20:00 - 20:30: Q&A & Diskusi",
-        "20:30 - 21:00: Penutupan & Giveaway",
-      ],
-      speaker: "Budi Santoso, CEO Toko-Online.id",
+      description: "Cara beriklan di TikTok untuk UMKM.",
+      agenda: ["19:00 - 19:30: Setting Ads", "19:30 - 20:00: Optimasi"],
+      speaker: "Rico",
       fee: "Gratis",
       testimonial: {
-        quote:
-          "Materinya sangat relevan, saya jadi paham strategi promosi online!",
-        name: "Fulan, Pengusaha Kecil",
-      },
-    },
-  },
-  
-  {
-    id: 17,
-    title: "Webinar Digital Marketing",
-    date: "15 April 2025",
-    time: "19:00 WIB",
-    place: "Online via Zoom",
-    img: Brand,
-    category: "Online",
-    detail: {
-      description: "Pelajari strategi digital marketing terkini...",
-      agenda: [
-        "19:00 - 19:15: Pembukaan & Sambutan",
-        "19:15 - 20:00: Strategi Digital Marketing 2025",
-        "20:00 - 20:30: Q&A & Diskusi",
-        "20:30 - 21:00: Penutupan & Giveaway",
-      ],
-      speaker: "Budi Santoso, CEO Toko-Online.id",
-      fee: "Gratis",
-      testimonial: {
-        quote:
-          "Materinya sangat relevan, saya jadi paham strategi promosi online!",
-        name: "Fulan, Pengusaha Kecil",
-      },
-    },
-  },
-  
-  {
-    id: 18,
-    title: "Creative Hackathon",
-    date: "25 April 2025",
-    time: "09:00 WIB",
-    place: "Offline di Bandung",
-    img: Iklan,
-    category: "Offline",
-    detail: {
-      description:
-        "Hackathon untuk ide kreatif membangun solusi digital...",
-      agenda: [
-        "09:00 - 10:00: Registrasi & Pembukaan",
-        "10:00 - 17:00: Hacking Time",
-        "17:00 - 18:00: Presentasi & Penjurian",
-      ],
-      speaker: "Tim Juri Startup Bandung",
-      fee: "Gratis",
-      testimonial: {
-        quote:
-          "Hackathon ini seru banget, saya ketemu banyak teman baru!",
-        name: "Andi, Developer",
-      },
-    },
-  },{
-    id: 19,
-    title: "Webinar Digital Marketing",
-    date: "15 April 2025",
-    time: "19:00 WIB",
-    place: "Online via Zoom",
-    img: Brand,
-    category: "Online",
-    detail: {
-      description: "Pelajari strategi digital marketing terkini...",
-      agenda: [
-        "19:00 - 19:15: Pembukaan & Sambutan",
-        "19:15 - 20:00: Strategi Digital Marketing 2025",
-        "20:00 - 20:30: Q&A & Diskusi",
-        "20:30 - 21:00: Penutupan & Giveaway",
-      ],
-      speaker: "Budi Santoso, CEO Toko-Online.id",
-      fee: "Gratis",
-      testimonial: {
-        quote:
-          "Materinya sangat relevan, saya jadi paham strategi promosi online!",
-        name: "Fulan, Pengusaha Kecil",
-      },
-    },
-  },
-  {
-    id: 20,
-    title: "Workshop UI/UX Design",
-    date: "20 April 2025",
-    time: "10:00 WIB",
-    place: "Offline di Jakarta",
-    img: Web,
-    category: "Offline",
-    detail: {
-      description: "Belajar langsung praktik membuat UI/UX modern...",
-      agenda: [
-        "10:00 - 11:00: Pengenalan UI/UX",
-        "11:00 - 12:30: Hands-on Design",
-        "13:00 - 14:30: User Testing",
-        "14:30 - 15:00: Sharing & Closing",
-      ],
-      speaker: "Siti Aminah, Senior UX Designer",
-      fee: "Rp 250.000",
-      testimonial: {
-        quote:
-          "Workshop ini membuka wawasan saya tentang pentingnya user experience.",
-        name: "Rizky, Mahasiswa",
-      },
-    },
-  },
-  {
-    id: 21,
-    title: "Creative Hackathon",
-    date: "25 April 2025",
-    time: "09:00 WIB",
-    place: "Offline di Bandung",
-    img: Iklan,
-    category: "Offline",
-    detail: {
-      description:
-        "Hackathon untuk ide kreatif membangun solusi digital...",
-      agenda: [
-        "09:00 - 10:00: Registrasi & Pembukaan",
-        "10:00 - 17:00: Hacking Time",
-        "17:00 - 18:00: Presentasi & Penjurian",
-      ],
-      speaker: "Tim Juri Startup Bandung",
-      fee: "Gratis",
-      testimonial: {
-        quote:
-          "Hackathon ini seru banget, saya ketemu banyak teman baru!",
-        name: "Andi, Developer",
-      },
-    },
-  },
-  {
-    id: 22,
-    title: "Webinar Digital Marketing",
-    date: "15 April 2025",
-    time: "19:00 WIB",
-    place: "Online via Zoom",
-    img: Brand,
-    category: "Online",
-    detail: {
-      description: "Pelajari strategi digital marketing terkini...",
-      agenda: [
-        "19:00 - 19:15: Pembukaan & Sambutan",
-        "19:15 - 20:00: Strategi Digital Marketing 2025",
-        "20:00 - 20:30: Q&A & Diskusi",
-        "20:30 - 21:00: Penutupan & Giveaway",
-      ],
-      speaker: "Budi Santoso, CEO Toko-Online.id",
-      fee: "Gratis",
-      testimonial: {
-        quote:
-          "Materinya sangat relevan, saya jadi paham strategi promosi online!",
-        name: "Fulan, Pengusaha Kecil",
-      },
-    },
-  },
-  
-  {
-    id: 23,
-    title: "Webinar Digital Marketing",
-    date: "15 April 2025",
-    time: "19:00 WIB",
-    place: "Online via Zoom",
-    img: Brand,
-    category: "Online",
-    detail: {
-      description: "Pelajari strategi digital marketing terkini...",
-      agenda: [
-        "19:00 - 19:15: Pembukaan & Sambutan",
-        "19:15 - 20:00: Strategi Digital Marketing 2025",
-        "20:00 - 20:30: Q&A & Diskusi",
-        "20:30 - 21:00: Penutupan & Giveaway",
-      ],
-      speaker: "Budi Santoso, CEO Toko-Online.id",
-      fee: "Gratis",
-      testimonial: {
-        quote:
-          "Materinya sangat relevan, saya jadi paham strategi promosi online!",
-        name: "Fulan, Pengusaha Kecil",
-      },
-    },
-  },
-  
-  {
-    id: 24,
-    title: "Creative Hackathon",
-    date: "25 April 2025",
-    time: "09:00 WIB",
-    place: "Offline di Bandung",
-    img: Iklan,
-    category: "Offline",
-    detail: {
-      description:
-        "Hackathon untuk ide kreatif membangun solusi digital...",
-      agenda: [
-        "09:00 - 10:00: Registrasi & Pembukaan",
-        "10:00 - 17:00: Hacking Time",
-        "17:00 - 18:00: Presentasi & Penjurian",
-      ],
-      speaker: "Tim Juri Startup Bandung",
-      fee: "Gratis",
-      testimonial: {
-        quote:
-          "Hackathon ini seru banget, saya ketemu banyak teman baru!",
-        name: "Andi, Developer",
+        quote: "Hemat biaya ads tapi hasil bagus.",
+        name: "Eka",
       },
     },
   },

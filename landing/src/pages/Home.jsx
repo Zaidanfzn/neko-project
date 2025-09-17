@@ -1,49 +1,53 @@
 import React, { useState } from "react";
 import Image from "/src/assets/img/kucing.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Web from "/src/assets/img/web.jpg";
 import Brand from "/src/assets/img/branding.jpg";
 import Wa from "/src/assets/img/wa.png";
 import Email from "/src/assets/img/email.png";
 import Testimonials from "./Testi";
-import { Link as RouterLink } from 'react-router-dom';
-
 
 const Home = () => {
-  // State untuk toggle selengkapnya
+  const navigate = useNavigate();
   const [showBranding, setShowBranding] = useState(false);
   const [showMarketing, setShowMarketing] = useState(false);
 
-  // Konten panjang
-  const brandingText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do 
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-    Ut enim ad minim veniam. consectetur adipiscing elit. Sed do 
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-    Ut enim ad minim veniam.  consectetur adipiscing elit. Sed do 
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-    Ut enim ad minim veniam.  consectetur adipiscing elit. Sed do 
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-    Ut enim ad minim veniam.  consectetur adipiscing elit. Sed do 
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-    Ut enim ad minim veniam.  consectetur adipiscing elit. Sed do 
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-    Ut enim ad minim veniam.`;
+  // Dummy text
+  const brandingText = `
+Creative Neko Project membantu UMKM membangun identitas merek (branding)
+yang kuat dan berkesan. Kami mendampingi mulai dari perencanaan strategi brand,
+pembuatan identitas visual, hingga implementasi komunikasi merek agar bisnis
+Anda semakin dikenal dan dipercaya oleh pasar.
+`;
 
-  const marketingText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis 
-    ipsum suspendisse ultrices gravida. Risus commodo viverra 
-    maecenas accumsan lacus vel facilisis.`;
+  const marketingText = `
+Kami juga menghadirkan layanan Digital Marketing untuk UMKM agar lebih mudah
+menjangkau pelanggan melalui media online. Mulai dari pengelolaan media sosial,
+pembuatan kampanye digital, hingga optimasi pemasaran online agar penjualan meningkat.
+`;
+
+  // Dummy function menutup menu (kalau ada menu mobile)
+  const closeMenu = () => {
+    // nanti isi logika menutup menu mobile jika ada
+  };
+
+  // untuk navigasi tombol internal
+  const handleNavClick = (item) => {
+    closeMenu();
+    if (!item.isScroll) {
+      navigate(item.to);
+      window.scrollTo(0, 0);
+    }
+  };
 
   return (
     <>
-      {/* Custom CSS nya */}
       <style>
         {`
-        /* Custom Hover Effect */
         .hover-effect {
           position: relative;
           overflow: hidden;
         }
-
         .hover-effect::after {
           content: '';
           position: absolute;
@@ -54,36 +58,28 @@ const Home = () => {
           background-color: #FFD700;
           transition: width 0.3s ease;
         }
-
         .hover-effect:hover::after {
           width: 100%;
         }
-
         .hover-effect h3 {
           color: #FFD700;
           transition: color 0.3s ease;
         }
-
         .hover-effect:hover h3 {
           color: #fff;
         }
-
         .card-hover {
           transition: all 0.3s ease;
         }
-
         .card-hover:hover {
           transform: translateY(-5px);
           box-shadow: 0 10px 20px #000000;
         }
-
-        /* Button Hover Glow */
         .btn-hover {
           background-color: #FFD700;
           color: black;
           transition: all 0.3s ease;
         }
-
         .btn-hover:hover {
           background-color: #fbbf24;
           box-shadow: 0 0 15px #fbbf24;
@@ -95,47 +91,40 @@ const Home = () => {
         {/* Hero Section */}
         <section id="home" className="w-full min-h-screen flex items-center">
           <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
             <div>
               <h1 className="text-5xl lg:text-6xl font-bold text-yellow-400 mb-6 leading-tight">
                 Creative Neko Project
               </h1>
               <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                vitae elit libero, a pharetra augue.consectetur adipiscing elit.
-                Sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua. Ut enim ad minim veniam. consectetur adipiscing elit.
-                Sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua. Ut enim ad minim veniam. consectetur adipiscing elit.
-                Sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua. Ut enim ad minim veniam. consectetur adipiscing elit.
-                Sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua. Ut enim ad minim veniam. consectetur adipiscing elit.
-                Sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua. Ut enim ad minim veniam.
+                Creative Neko Project adalah konsultan kreatif yang berfokus
+                pada pemberdayaan UMKM. Kami mendukung pelaku usaha kecil dan
+                menengah melalui layanan konsultasi, pengelolaan portofolio,
+                serta penyelenggaraan event online maupun offline. Kami juga
+                memiliki <strong>Creative Neko Academy</strong> sebagai pusat
+                pelatihan dan pengembangan kapasitas UMKM.
               </p>
-              <button className="btn-hover px-8 py-3 rounded-lg font-semibold">
-                Hubungi via WhatsApp
-              </button>
+              <a
+                href="https://wa.me/0891234567"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="btn-hover px-8 py-3 rounded-lg font-semibold">
+                  Hubungi via WhatsApp
+                </button>
+              </a>
             </div>
-
-            {/* Right Content - Logo */}
             <div className="flex justify-center lg:justify-end">
-              <img src={Image} alt="kucing" className="py-2" />
+              <img src={Image} alt="Logo Creative Neko" className="py-2" />
             </div>
           </div>
         </section>
 
         {/* Services Section */}
-        <section
-          id="services"
-          className="w-full min-h-screen flex items-center py-20"
-        >
+        <section id="services" className="w-full min-h-screen flex items-center py-20">
           <div className="max-w-7xl mx-auto px-6">
             <h2 className="text-4xl font-bold text-yellow-400 mb-12">
               Layanan Kami
             </h2>
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Branding */}
               <div className="bg-gray-800 border border-gray-700 rounded-lg p-8 card-hover hover-effect">
@@ -154,14 +143,17 @@ const Home = () => {
                   {showBranding ? "Tampilkan Lebih Sedikit" : "Selengkapnya"}
                 </button>
                 <br />
-                <Link to="/services">
-                  <button className="btn-hover px-6 py-2 rounded-lg font-semibold">
-                    Learn More
-                  </button>
-                </Link>
+                <button
+                  onClick={() =>
+                    handleNavClick({ to: "/services", isScroll: false })
+                  }
+                  className="btn-hover px-6 py-2 rounded-lg font-semibold"
+                >
+                  Learn More
+                </button>
               </div>
 
-              {/* Digital Marketing */}
+              {/* Marketing */}
               <div className="bg-gray-800 border border-gray-700 rounded-lg p-8 card-hover hover-effect">
                 <h3 className="text-2xl font-semibold text-white mb-4">
                   Digital Marketing
@@ -178,42 +170,38 @@ const Home = () => {
                   {showMarketing ? "Tampilkan Lebih Sedikit" : "Selengkapnya"}
                 </button>
                 <br />
-                <Link to="/services">
-                  <button className="btn-hover px-6 py-2 rounded-lg font-semibold">
-                    Learn More
-                  </button>
-                </Link>
+                <button
+                  onClick={() =>
+                    handleNavClick({ to: "/services", isScroll: false })
+                  }
+                  className="btn-hover px-6 py-2 rounded-lg font-semibold"
+                >
+                  Learn More
+                </button>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Selected Works Section */}
+        {/* Portfolio Section */}
         <section id="portfolio" className="w-full py-20">
           <div className="max-w-7xl mx-auto px-6">
             <h2 className="text-2xl font-semibold text-yellow-400 mb-8">
               Portfolio
             </h2>
-            {/*Card dari portfolio nya*/}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-              {/* Portfolio 1 */}
               <div className="relative border border-gray-700 h-64 bg-gray-800 rounded-lg overflow-hidden group cursor-pointer hover:border-yellow-400 transition-colors duration-300">
                 <img src={Web} alt="Project Satu" className="w-full h-full object-cover" />
-                {/* Overlay */}
                 <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <h3 className="text-lg font-semibold text-yellow-400">Website Toko Online</h3>
                 </div>
               </div>
-
-              {/* Portfolio 2 */}
               <div className="relative border border-gray-700 h-64 bg-gray-800 rounded-lg overflow-hidden group cursor-pointer hover:border-yellow-400 transition-colors duration-300">
                 <img src={Image} alt="Project Dua" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <h3 className="text-lg font-semibold text-yellow-400">Kampanye Digital Produk Baru</h3>
                 </div>
               </div>
-
-              {/* Portfolio 3 */}
               <div className="relative border border-gray-700 h-64 bg-gray-800 rounded-lg overflow-hidden group cursor-pointer hover:border-yellow-400 transition-colors duration-300">
                 <img src={Brand} alt="Project Tiga" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -221,13 +209,15 @@ const Home = () => {
                 </div>
               </div>
             </div>
- 
             <div className="text-center">
-              <Link to="/portfolio#hero">
-                <button className="btn-hover px-8 py-3 rounded-lg font-semibold">
-                  Lihat Portfolio Lainnya
+              <button
+                  onClick={() =>
+                    handleNavClick({ to: "/portfolio", isScroll: false })
+                  }
+                  className="btn-hover px-6 py-2 rounded-lg font-semibold"
+                >
+                  Lihat Portfolio lainnya
                 </button>
-              </Link>
             </div>
           </div>
         </section>
@@ -238,50 +228,49 @@ const Home = () => {
             <h2 className="text-4xl font-bold text-yellow-400 mb-12">
               Event Mendatang
             </h2>
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              {/* Event 1 */}
               <div className="bg-gray-800 border border-gray-700 rounded-lg p-8 card-hover hover-effect">
                 <h3 className="text-2xl font-semibold text-yellow-400 mb-4">
-                  Webinar: Strategi Digital
+                  Webinar: Strategi Digital UMKM 2024
                 </h3>
                 <p className="text-gray-400 mb-4">
-                  15 November 2024 | 19:00 – 21:00 WIB — Lorem ipsum dolor sit
-                  amet, consectetur adipiscing elit.
+                  15 November 2024 | 19:00 - 21:00 WIB — Pelajari bagaimana
+                  memanfaatkan media sosial dan kampanye online untuk meningkatkan penjualan produk UMKM Anda.
                 </p>
-                <button className="btn-hover px-6 py-2 rounded-lg font-semibold">
-                  Daftar Sekarang
-                </button>
+                <a href="eventdetail.jsx" target="_blank" rel="noopener noreferrer">
+                  <button className="btn-hover px-6 py-2 rounded-lg font-semibold">
+                    Daftar Sekarang
+                  </button>
+                </a>
               </div>
-
-              {/* Event 2 */}
               <div className="bg-gray-800 border border-gray-700 rounded-lg p-8 card-hover hover-effect">
                 <h3 className="text-2xl font-semibold text-yellow-400 mb-4">
-                  Workshop: Branding
+                  Workshop Offline: Branding & Identitas Visual
                 </h3>
                 <p className="text-gray-400 mb-4">
-                  22 November 2024 | 09:00 – 16:00 WIB — Quis ipsum suspendisse
-                  ultrices gravida.
+                  22 November 2024 | 09:00 - 16:00 WIB (Jakarta) — Workshop intensif untuk membantu UMKM menyusun strategi branding dan desain visual agar bisnis terlihat lebih profesional.
                 </p>
-                <button className="btn-hover px-6 py-2 rounded-lg font-semibold">
-                  Daftar Sekarang
-                </button>
+                <a href="https://linkpendaftaranworkshop.com" target="_blank" rel="noopener noreferrer">
+                  <button className="btn-hover px-6 py-2 rounded-lg font-semibold">
+                    Daftar Sekarang
+                  </button>
+                </a>
               </div>
             </div>
-
             <div className="text-center">
-              <Link to="/Event">
-                <button className="btn-hover px-8 py-3 rounded-lg font-semibold">
-                  Lihat Event Lainnya
+              <button
+                  onClick={() =>
+                    handleNavClick({ to: "/event", isScroll: false })
+                  }
+                  className="btn-hover px-6 py-2 rounded-lg font-semibold"
+                >
+                  Learn More
                 </button>
-              </Link>
             </div>
           </div>
         </section>
 
-        
-        {/* Testi section*/}
-
+        {/* Testimonials */}
         <Testimonials />
 
         {/* Contact Section */}
@@ -296,21 +285,21 @@ const Home = () => {
             </p>
           </div>
           <div className="flex justify-center items-center gap-x-6">
-         <Link to="https://wa.me/0891234567">
-          <img 
-            src={Wa} 
-            alt="WhatsApp icon" 
-            className="w-12 h-12 hover:scale-110 transition-transform duration-300 center"
-          />
-        </Link>
-        <Link to="https://mailto:infonekoproject@gmail.com">
-          <img 
-            src={Email} 
-            alt="WhatsApp icon" 
-            className="w-12 h-12 hover:scale-110 transition-transform duration-300 center"
-          />
-        </Link>
-        </div>
+            <a href="https://wa.me/0891234567" target="_blank" rel="noopener noreferrer">
+              <img
+                src={Wa}
+                alt="WhatsApp icon"
+                className="w-12 h-12 hover:scale-110 transition-transform duration-300 center"
+              />
+            </a>
+            <a href="mailto:infonekoproject@gmail.com">
+              <img
+                src={Email}
+                alt="Email icon"
+                className="w-12 h-12 hover:scale-110 transition-transform duration-300 center"
+              />
+            </a>
+          </div>
         </section>
       </div>
     </>

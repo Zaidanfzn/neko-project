@@ -1,6 +1,5 @@
 import Iklan from "../assets/img/iklan.jpeg";
 import Kucing from "../assets/img/kucing.png";
-import Whatsapp from "../assets/img/wa.png";
 import Web from "../assets/img/web.jpg";
 import Brand from "../assets/img/branding.jpg";
 
@@ -12,429 +11,177 @@ export const projects = [
     img: Web,
     category: "Web",
     detail: {
-      masalah: "Toko tidak memiliki sistem penjualan online dan kehilangan banyak calon pembeli.",
-      solusi: "Kami merancang website e-commerce dengan fitur cart, checkout, dan dashboard admin.",
-      hasil: "Traffic meningkat 200% dan penjualan naik 3x lipat dalam 2 bulan pertama.",
-      galeri: [Iklan, Kucing, Whatsapp],
+      masalah: "Toko tidak punya sistem penjualan online.",
+      solusi: "Membangun website e-commerce lengkap.",
+      hasil: "Traffic naik 200% dan penjualan 3x lipat.",
+      galeri: [Iklan, Kucing],
       testimoni: {
-        quote: "Sangat puas dengan performa websitenya. Tim ini profesional dan cepat tanggap!",
+        quote: "Sangat puas dengan performa websitenya.",
         nama: "Budi Santoso",
-        jabatan: "CEO TokoOnline.id"
-      }
-    }
+        jabatan: "CEO TokoOnline.id",
+      },
+    },
   },
   {
     id: 2,
     title: "Kampanye Digital Produk Baru",
-    desc: "Strategi kampanye digital untuk launching produk skincare.",
+    desc: "Strategi kampanye digital launching produk.",
     img: Kucing,
     category: "Campaign",
     detail: {
-      masalah: "Kurangnya awareness terhadap brand dan produk baru.",
-      solusi: "Membuat kampanye social media interaktif & video promosi untuk TikTok & IG.",
-      hasil: "Followers naik 10k dalam seminggu dan 5.000 unit produk terjual dalam bulan pertama.",
-      galeri: [Kucing, Kucing, Iklan],
+      masalah: "Kurang awareness produk baru.",
+      solusi: "Membuat kampanye sosial media interaktif.",
+      hasil: "Followers naik 10k dan 5000 unit terjual.",
+      galeri: [Kucing, Iklan],
       testimoni: {
-        quote: "Tim ini luar biasa! Campaign-nya sukses besar dan sangat disukai target market kami.",
+        quote: "Campaign-nya sukses besar.",
         nama: "Dina Ayu",
-        jabatan: "Marketing Manager, GlowCare"
-      }
-    }
+        jabatan: "Marketing Manager, GlowCare",
+      },
+    },
   },
   {
     id: 3,
     title: "Rebranding Identitas Brand",
-    desc: "Desain ulang logo, warna, dan seluruh visual branding.",
+    desc: "Desain ulang logo, warna, dan visual.",
     img: Brand,
     category: "Konten",
     detail: {
-      masalah: "Identitas brand lama tidak konsisten dan terlihat outdated.",
-      solusi: "Melakukan audit brand, membuat logo baru, brand guideline, dan konten visual.",
-      hasil: "Brand lebih dikenal, nilai profesionalisme meningkat dan customer trust naik.",
-      galeri: [Whatsapp, Iklan, Kucing],
+      masalah: "Identitas brand lama tidak konsisten.",
+      solusi: "Audit brand & buat brand guideline baru.",
+      hasil: "Brand lebih dikenal & dipercaya.",
+      galeri: [Brand, Iklan],
       testimoni: {
-        quote: "Sekarang brand kami lebih dipercaya dan tampil profesional. Keren banget!",
+        quote: "Brand kami tampil profesional.",
         nama: "Fahmi Rizky",
-        jabatan: "Founder, SajiRasa"
-      }
-    }
+        jabatan: "Founder SajiRasa",
+      },
+    },
   },
   {
     id: 4,
     title: "Landing Page Konversi Tinggi",
-    desc: "Landing page untuk digital ads dengan CTA yang kuat.",
+    desc: "Landing page untuk digital ads.",
     img: Iklan,
     category: "Web",
     detail: {
-      masalah: "Halaman promosi tidak menghasilkan penjualan.",
-      solusi: "Membuat landing page dengan struktur AIDA dan optimasi speed & mobile.",
-      hasil: "Konversi meningkat dari 0.5% ke 3.8%. ROAS jadi positif dalam 10 hari.",
-      galeri: [Iklan, Iklan, Kucing],
+      masalah: "Halaman promosi tidak konversi.",
+      solusi: "Landing page AIDA & optimasi mobile.",
+      hasil: "Konversi dari 0.5% ke 3.8%.",
+      galeri: [Iklan, Kucing],
       testimoni: {
-        quote: "Landing page-nya langsung terasa dampaknya. Jauh lebih optimal!",
+        quote: "Langsung terasa dampaknya.",
         nama: "Nanda Prasetyo",
-        jabatan: "CMO, LangsungLaris"
-      }
-    }
+        jabatan: "CMO LangsungLaris",
+      },
+    },
   },
   {
     id: 5,
-    title: "Aplikasi Mobile Inventaris",
-    desc: "UI/UX dan pengembangan aplikasi internal untuk gudang.",
+    title: "Social Media Management",
+    desc: "Mengelola konten media sosial UMKM.",
     img: Kucing,
-    category: "Web",
+    category: "Campaign",
     detail: {
-      masalah: "Stok barang sering tidak sinkron antara gudang dan sistem.",
-      solusi: "Membangun aplikasi mobile berbasis React Native untuk update real-time.",
-      hasil: "Akurasi inventaris meningkat hingga 95%. Proses lebih efisien.",
-      galeri: [Kucing, Whatsapp, Whatsapp],
+      masalah: "Konten media sosial tidak konsisten.",
+      solusi: "Membuat kalender konten & desain rutin.",
+      hasil: "Engagement naik 3x.",
+      galeri: [Kucing, Brand],
       testimoni: {
-        quote: "Tim dev-nya solid. Sekarang operasional lebih lancar & akurat.",
-        nama: "Andika Wirawan",
-        jabatan: "COO, LogistikKita"
-      }
-    }
+        quote: "Konten kami lebih rapi dan menarik.",
+        nama: "Lusi",
+        jabatan: "Owner Cafe KopiKita",
+      },
+    },
   },
   {
     id: 6,
-    title: "Konten Edukasi Produk",
-    desc: "Strategi konten dan video tutorial produk elektronik.",
-    img: Whatsapp,
-    category: "Konten",
-    detail: {
-      masalah: "Customer sering kesulitan memahami fitur produk.",
-      solusi: "Kami produksi video tutorial dan konten artikel edukatif di blog & YouTube.",
-      hasil: "Customer service issue turun 40%. Engagement video sangat tinggi.",
-      galeri: [Whatsapp, Kucing, Iklan],
-      testimoni: {
-        quote: "Tutorial-nya sangat membantu, bahkan CS kami jadi lebih santai.",
-        nama: "Yulia Sari",
-        jabatan: "Customer Success Manager"
-      }
-    }
-  },
-  {
-    id: 7,
-    title: "Landing Page Konversi Tinggi",
-    desc: "Landing page untuk digital ads dengan CTA yang kuat.",
-    img: Iklan,
-    category: "Web",
-    detail: {
-      masalah: "Halaman promosi tidak menghasilkan penjualan.",
-      solusi: "Membuat landing page dengan struktur AIDA dan optimasi speed & mobile.",
-      hasil: "Konversi meningkat dari 0.5% ke 3.8%. ROAS jadi positif dalam 10 hari.",
-      galeri: [Iklan, Iklan, Kucing],
-      testimoni: {
-        quote: "Landing page-nya langsung terasa dampaknya. Jauh lebih optimal!",
-        nama: "Nanda Prasetyo",
-        jabatan: "CMO, LangsungLaris"
-      }
-    }
-  },
-  {
-    id: 8,
-    title: "Landing Page Konversi Tinggi",
-    desc: "Landing page untuk digital ads dengan CTA yang kuat.",
-    img: Iklan,
-    category: "Konten",
-    detail: {
-      masalah: "Halaman promosi tidak menghasilkan penjualan.",
-      solusi: "Membuat landing page dengan struktur AIDA dan optimasi speed & mobile.",
-      hasil: "Konversi meningkat dari 0.5% ke 3.8%. ROAS jadi positif dalam 10 hari.",
-      galeri: [Iklan, Iklan, Kucing],
-      testimoni: {
-        quote: "Landing page-nya langsung terasa dampaknya. Jauh lebih optimal!",
-        nama: "Nanda Prasetyo",
-        jabatan: "CMO, LangsungLaris"
-      }
-    }
-  },
-  {
-    id: 9,
-    title: "Landing Page Konversi Tinggi",
-    desc: "Landing page untuk digital ads dengan CTA yang kuat.",
-    img: Iklan,
-    category: "Konten",
-    detail: {
-      masalah: "Halaman promosi tidak menghasilkan penjualan.",
-      solusi: "Membuat landing page dengan struktur AIDA dan optimasi speed & mobile.",
-      hasil: "Konversi meningkat dari 0.5% ke 3.8%. ROAS jadi positif dalam 10 hari.",
-      galeri: [Iklan, Iklan, Kucing],
-      testimoni: {
-        quote: "Landing page-nya langsung terasa dampaknya. Jauh lebih optimal!",
-        nama: "Nanda Prasetyo",
-        jabatan: "CMO, LangsungLaris"
-      }
-    }
-  },
-  {
-    id: 10,
-    title: "Landing Page Konversi Tinggi",
-    desc: "Landing page untuk digital ads dengan CTA yang kuat.",
-    img: Iklan,
-    category: "Campaign",
-    detail: {
-      masalah: "Halaman promosi tidak menghasilkan penjualan.",
-      solusi: "Membuat landing page dengan struktur AIDA dan optimasi speed & mobile.",
-      hasil: "Konversi meningkat dari 0.5% ke 3.8%. ROAS jadi positif dalam 10 hari.",
-      galeri: [Iklan, Iklan, Kucing],
-      testimoni: {
-        quote: "Landing page-nya langsung terasa dampaknya. Jauh lebih optimal!",
-        nama: "Nanda Prasetyo",
-        jabatan: "CMO, LangsungLaris"
-      }
-    }
-  },
-  {
-    id: 11,
-    title: "Landing Page Konversi Tinggi",
-    desc: "Landing page untuk digital ads dengan CTA yang kuat.",
-    img: Iklan,
-    category: "Campaign",
-    detail: {
-      masalah: "Halaman promosi tidak menghasilkan penjualan.",
-      solusi: "Membuat landing page dengan struktur AIDA dan optimasi speed & mobile.",
-      hasil: "Konversi meningkat dari 0.5% ke 3.8%. ROAS jadi positif dalam 10 hari.",
-      galeri: [Iklan, Iklan, Kucing],
-      testimoni: {
-        quote: "Landing page-nya langsung terasa dampaknya. Jauh lebih optimal!",
-        nama: "Nanda Prasetyo",
-        jabatan: "CMO, LangsungLaris"
-      }
-    }
-  },
-  {
-    id: 12,
-    title: "Landing Page Konversi Tinggi",
-    desc: "Landing page untuk digital ads dengan CTA yang kuat.",
-    img: Iklan,
-    category: "Campaign",
-    detail: {
-      masalah: "Halaman promosi tidak menghasilkan penjualan.",
-      solusi: "Membuat landing page dengan struktur AIDA dan optimasi speed & mobile.",
-      hasil: "Konversi meningkat dari 0.5% ke 3.8%. ROAS jadi positif dalam 10 hari.",
-      galeri: [Iklan, Iklan, Kucing],
-      testimoni: {
-        quote: "Landing page-nya langsung terasa dampaknya. Jauh lebih optimal!",
-        nama: "Nanda Prasetyo",
-        jabatan: "CMO, LangsungLaris"
-      }
-    }
-  },
-  {
-    id: 13,
-    title: "Website Toko Online",
-    desc: "Desain & Pengembangan Web",
-    img: Web,
-    category: "Web",
-    detail: {
-      masalah: "Toko tidak memiliki sistem penjualan online dan kehilangan banyak calon pembeli.",
-      solusi: "Kami merancang website e-commerce dengan fitur cart, checkout, dan dashboard admin.",
-      hasil: "Traffic meningkat 200% dan penjualan naik 3x lipat dalam 2 bulan pertama.",
-      galeri: [Iklan, Kucing, Whatsapp],
-      testimoni: {
-        quote: "Sangat puas dengan performa websitenya. Tim ini profesional dan cepat tanggap!",
-        nama: "Budi Santoso",
-        jabatan: "CEO TokoOnline.id"
-      }
-    }
-  },
-  {
-    id: 14,
-    title: "Kampanye Digital Produk Baru",
-    desc: "Strategi kampanye digital untuk launching produk skincare.",
-    img: Kucing,
-    category: "Campaign",
-    detail: {
-      masalah: "Kurangnya awareness terhadap brand dan produk baru.",
-      solusi: "Membuat kampanye social media interaktif & video promosi untuk TikTok & IG.",
-      hasil: "Followers naik 10k dalam seminggu dan 5.000 unit produk terjual dalam bulan pertama.",
-      galeri: [Kucing, Kucing, Iklan],
-      testimoni: {
-        quote: "Tim ini luar biasa! Campaign-nya sukses besar dan sangat disukai target market kami.",
-        nama: "Dina Ayu",
-        jabatan: "Marketing Manager, GlowCare"
-      }
-    }
-  },
-  {
-    id: 15,
-    title: "Rebranding Identitas Brand",
-    desc: "Desain ulang logo, warna, dan seluruh visual branding.",
+    title: "Desain Kemasan Produk",
+    desc: "Kemasan kreatif untuk produk UMKM.",
     img: Brand,
     category: "Konten",
     detail: {
-      masalah: "Identitas brand lama tidak konsisten dan terlihat outdated.",
-      solusi: "Melakukan audit brand, membuat logo baru, brand guideline, dan konten visual.",
-      hasil: "Brand lebih dikenal, nilai profesionalisme meningkat dan customer trust naik.",
-      galeri: [Whatsapp, Iklan, Kucing],
+      masalah: "Kemasan kurang menarik.",
+      solusi: "Desain kemasan modern & fungsional.",
+      hasil: "Penjualan naik & brand awareness tinggi.",
+      galeri: [Brand, Iklan],
       testimoni: {
-        quote: "Sekarang brand kami lebih dipercaya dan tampil profesional. Keren banget!",
-        nama: "Fahmi Rizky",
-        jabatan: "Founder, SajiRasa"
-      }
-    }
+        quote: "Kemasan baru meningkatkan kepercayaan pembeli.",
+        nama: "Tono",
+        jabatan: "Owner SnackBar",
+      },
+    },
   },
   {
-    id: 16,
-    title: "Landing Page Konversi Tinggi",
-    desc: "Landing page untuk digital ads dengan CTA yang kuat.",
+    id: 7,
+    title: "Fotografi Produk",
+    desc: "Foto profesional untuk katalog produk.",
     img: Iklan,
+    category: "Konten",
+    detail: {
+      masalah: "Foto produk seadanya.",
+      solusi: "Sesi foto profesional studio.",
+      hasil: "Katalog lebih menarik.",
+      galeri: [Iklan, Kucing],
+      testimoni: {
+        quote: "Foto produk kami jadi keren.",
+        nama: "Winda",
+        jabatan: "Owner KueRumahan",
+      },
+    },
+  },
+  {
+    id: 8,
+    title: "Optimasi Marketplace",
+    desc: "Optimasi toko UMKM di marketplace.",
+    img: Web,
     category: "Web",
     detail: {
-      masalah: "Halaman promosi tidak menghasilkan penjualan.",
-      solusi: "Membuat landing page dengan struktur AIDA dan optimasi speed & mobile.",
-      hasil: "Konversi meningkat dari 0.5% ke 3.8%. ROAS jadi positif dalam 10 hari.",
-      galeri: [Iklan, Iklan, Kucing],
+      masalah: "Toko sepi pembeli.",
+      solusi: "Optimasi judul & kata kunci produk.",
+      hasil: "Penjualan naik signifikan.",
+      galeri: [Web, Iklan],
       testimoni: {
-        quote: "Landing page-nya langsung terasa dampaknya. Jauh lebih optimal!",
-        nama: "Nanda Prasetyo",
-        jabatan: "CMO, LangsungLaris"
-      }
-    }
+        quote: "Produk lebih mudah ditemukan pembeli.",
+        nama: "Arif",
+        jabatan: "Owner FashionLokal",
+      },
+    },
   },
   {
-    id: 17,
-    title: "Aplikasi Mobile Inventaris",
-    desc: "UI/UX dan pengembangan aplikasi internal untuk gudang.",
+    id: 9,
+    title: "Pembuatan Video Promosi",
+    desc: "Video promosi kreatif untuk UMKM.",
+    img: Brand,
+    category: "Campaign",
+    detail: {
+      masalah: "Produk sulit viral.",
+      solusi: "Video pendek storytelling.",
+      hasil: "Reach meningkat 500%.",
+      galeri: [Brand, Kucing],
+      testimoni: {
+        quote: "Videonya bikin brand kami dikenal.",
+        nama: "Yanti",
+        jabatan: "Owner BatikCantik",
+      },
+    },
+  },
+  {
+    id: 10,
+    title: "Pelatihan Tim Internal",
+    desc: "Pelatihan digital marketing internal.",
     img: Kucing,
-    category: "Web",
-    detail: {
-      masalah: "Stok barang sering tidak sinkron antara gudang dan sistem.",
-      solusi: "Membangun aplikasi mobile berbasis React Native untuk update real-time.",
-      hasil: "Akurasi inventaris meningkat hingga 95%. Proses lebih efisien.",
-      galeri: [Kucing, Whatsapp, Whatsapp],
-      testimoni: {
-        quote: "Tim dev-nya solid. Sekarang operasional lebih lancar & akurat.",
-        nama: "Andika Wirawan",
-        jabatan: "COO, LogistikKita"
-      }
-    }
-  },
-  {
-    id: 18,
-    title: "Konten Edukasi Produk",
-    desc: "Strategi konten dan video tutorial produk elektronik.",
-    img: Whatsapp,
-    category: "Konten",
-    detail: {
-      masalah: "Customer sering kesulitan memahami fitur produk.",
-      solusi: "Kami produksi video tutorial dan konten artikel edukatif di blog & YouTube.",
-      hasil: "Customer service issue turun 40%. Engagement video sangat tinggi.",
-      galeri: [Whatsapp, Kucing, Iklan],
-      testimoni: {
-        quote: "Tutorial-nya sangat membantu, bahkan CS kami jadi lebih santai.",
-        nama: "Yulia Sari",
-        jabatan: "Customer Success Manager"
-      }
-    }
-  },
-  {
-    id: 19,
-    title: "Landing Page Konversi Tinggi",
-    desc: "Landing page untuk digital ads dengan CTA yang kuat.",
-    img: Iklan,
-    category: "Web",
-    detail: {
-      masalah: "Halaman promosi tidak menghasilkan penjualan.",
-      solusi: "Membuat landing page dengan struktur AIDA dan optimasi speed & mobile.",
-      hasil: "Konversi meningkat dari 0.5% ke 3.8%. ROAS jadi positif dalam 10 hari.",
-      galeri: [Iklan, Iklan, Kucing],
-      testimoni: {
-        quote: "Landing page-nya langsung terasa dampaknya. Jauh lebih optimal!",
-        nama: "Nanda Prasetyo",
-        jabatan: "CMO, LangsungLaris"
-      }
-    }
-  },
-  {
-    id: 20,
-    title: "Landing Page Konversi Tinggi",
-    desc: "Landing page untuk digital ads dengan CTA yang kuat.",
-    img: Iklan,
-    category: "Konten",
-    detail: {
-      masalah: "Halaman promosi tidak menghasilkan penjualan.",
-      solusi: "Membuat landing page dengan struktur AIDA dan optimasi speed & mobile.",
-      hasil: "Konversi meningkat dari 0.5% ke 3.8%. ROAS jadi positif dalam 10 hari.",
-      galeri: [Iklan, Iklan, Kucing],
-      testimoni: {
-        quote: "Landing page-nya langsung terasa dampaknya. Jauh lebih optimal!",
-        nama: "Nanda Prasetyo",
-        jabatan: "CMO, LangsungLaris"
-      }
-    }
-  },
-  {
-    id: 21,
-    title: "Landing Page Konversi Tinggi",
-    desc: "Landing page untuk digital ads dengan CTA yang kuat.",
-    img: Iklan,
-    category: "Konten",
-    detail: {
-      masalah: "Halaman promosi tidak menghasilkan penjualan.",
-      solusi: "Membuat landing page dengan struktur AIDA dan optimasi speed & mobile.",
-      hasil: "Konversi meningkat dari 0.5% ke 3.8%. ROAS jadi positif dalam 10 hari.",
-      galeri: [Iklan, Iklan, Kucing],
-      testimoni: {
-        quote: "Landing page-nya langsung terasa dampaknya. Jauh lebih optimal!",
-        nama: "Nanda Prasetyo",
-        jabatan: "CMO, LangsungLaris"
-      }
-    }
-  },
-  {
-    id: 22,
-    title: "Landing Page Konversi Tinggi",
-    desc: "Landing page untuk digital ads dengan CTA yang kuat.",
-    img: Iklan,
     category: "Campaign",
     detail: {
-      masalah: "Halaman promosi tidak menghasilkan penjualan.",
-      solusi: "Membuat landing page dengan struktur AIDA dan optimasi speed & mobile.",
-      hasil: "Konversi meningkat dari 0.5% ke 3.8%. ROAS jadi positif dalam 10 hari.",
-      galeri: [Iklan, Iklan, Kucing],
+      masalah: "Tim internal kurang skill digital.",
+      solusi: "Training 2 hari full praktik.",
+      hasil: "Tim lebih siap eksekusi.",
+      galeri: [Kucing, Iklan],
       testimoni: {
-        quote: "Landing page-nya langsung terasa dampaknya. Jauh lebih optimal!",
-        nama: "Nanda Prasetyo",
-        jabatan: "CMO, LangsungLaris"
-      }
-    }
-  },
-  {
-    id: 23,
-    title: "Landing Page Konversi Tinggi",
-    desc: "Landing page untuk digital ads dengan CTA yang kuat.",
-    img: Iklan,
-    category: "Campaign",
-    detail: {
-      masalah: "Halaman promosi tidak menghasilkan penjualan.",
-      solusi: "Membuat landing page dengan struktur AIDA dan optimasi speed & mobile.",
-      hasil: "Konversi meningkat dari 0.5% ke 3.8%. ROAS jadi positif dalam 10 hari.",
-      galeri: [Iklan, Iklan, Kucing],
-      testimoni: {
-        quote: "Landing page-nya langsung terasa dampaknya. Jauh lebih optimal!",
-        nama: "Nanda Prasetyo",
-        jabatan: "CMO, LangsungLaris"
-      }
-    }
-  },
-  {
-    id: 24,
-    title: "Landing Page Konversi Tinggi",
-    desc: "Landing page untuk digital ads dengan CTA yang kuat.",
-    img: Iklan,
-    category: "Campaign",
-    detail: {
-      masalah: "Halaman promosi tidak menghasilkan penjualan.",
-      solusi: "Membuat landing page dengan struktur AIDA dan optimasi speed & mobile.",
-      hasil: "Konversi meningkat dari 0.5% ke 3.8%. ROAS jadi positif dalam 10 hari.",
-      galeri: [Iklan, Iklan, Kucing],
-      testimoni: {
-        quote: "Landing page-nya langsung terasa dampaknya. Jauh lebih optimal!",
-        nama: "Nanda Prasetyo",
-        jabatan: "CMO, LangsungLaris"
-      }
-    }
+        quote: "Trainingnya jelas dan mudah dipahami.",
+        nama: "Reza",
+        jabatan: "HR Manager UMKM Mart",
+      },
+    },
   },
 ];

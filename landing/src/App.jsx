@@ -26,7 +26,7 @@ function AppContent() {
   // path yang navbar-nya disembunyikan
   const hideNavbarOn = ["/login", "/signup", "/dashboard", "/dashboarduser", "/dashboardevent"];
   // path yang footer-nya disembunyikan
-  const hideFooterOn = ["/contact", "/dashboard", "/dashboarduser", "/dashboardevent"];
+  const hideFooterOn = ["/login", "/signup", "/contact", "/dashboard", "/dashboarduser", "/dashboardevent"];
 
   return (
     <div className="min-h-screen bg-gray-900">

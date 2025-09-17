@@ -110,50 +110,23 @@ export default function Portfolio() {
       {/* Footer Section */}
       <section className="w-full bg-gray-800 py-10 border-t border-gray-700">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
-          {/* Logo & Title */}
-          <div className="flex flex-col items-center md:items-start">
-            <img src={LogoIcon} alt="Logo" className="w-16 h-16 mb-4" />
-            <h2 className="text-white text-2xl font-semibold mb-2">
-              Creative Neko
-            </h2>
-          </div>
-
-          {/* About Us */}
-          <div>
-            <h4 className="text-white font-semibold mb-3">About Us</h4>
-            <ul className="space-y-2 text-white text-sm">
-              <li>
-                <a href="#" className="hover:text-yellow-400">
-                  Mission
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-yellow-400">
-                  Team
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-yellow-400">
-                  Newsletter
-                </a>
-              </li>
-            </ul>
+          {/* Logo & Deskripsi */}
+          <div className="flex flex-col md:flex-row md:col-span-2 md:items-center">
+            <img src={LogoIcon} alt="Logo" className="w-16 h-16 mb-4 md:mb-0 md:mr-4" />
+            <div>
+              <h2 className="text-white text-2xl font-semibold mb-2">Creative Neko</h2>
+              <p className="text-gray-400 text-sm leading-relaxed max-w-md">
+                Creative Neko Project adalah konsultan kreatif yang mendukung UMKM
+                melalui layanan konsultasi, manajemen portofolio, event, dan pelatihan
+                di Creative Neko Academy.
+              </p>
+            </div>
           </div>
 
           {/* Support */}
           <div>
             <h4 className="text-white font-semibold mb-3">Support</h4>
             <ul className="space-y-2 text-white text-sm">
-              <li>
-                <a href="#" className="hover:text-yellow-400">
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-yellow-400">
-                  Refund Policy
-                </a>
-              </li>
               <li>
                 <a href="#" className="hover:text-yellow-400">
                   FAQ's
@@ -174,11 +147,6 @@ export default function Portfolio() {
               <li>
                 <a href="#" className="hover:text-yellow-400">
                   LinkedIn
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-yellow-400">
-                  YouTube
                 </a>
               </li>
             </ul>
