@@ -87,9 +87,9 @@ pembuatan kampanye digital, hingga optimasi pemasaran online agar penjualan meni
       `}
       </style>
 
-      <div className="w-full bg-gray-900 text-white pt-20">
+      <div className="w-full bg-gray-900 text-white">
         {/* Hero Section */}
-        <section id="home" className="w-full min-h-screen flex items-center">
+        <section id="home" className="w-full min-h-screen flex items-center pt-20 sm:pt-24">
           <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-5xl lg:text-6xl font-bold text-yellow-400 mb-6 leading-tight">
