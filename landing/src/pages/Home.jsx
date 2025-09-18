@@ -96,12 +96,14 @@ pembuatan kampanye digital, hingga optimasi pemasaran online agar penjualan meni
                 Creative Neko Project
               </h1>
               <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-                Creative Neko Project adalah konsultan kreatif yang berfokus
-                pada pemberdayaan UMKM. Kami mendukung pelaku usaha kecil dan
-                menengah melalui layanan konsultasi, pengelolaan portofolio,
-                serta penyelenggaraan event online maupun offline. Kami juga
+                Creative Neko Project adalah startup yang menyediakan jasa untuk membuat
+                berbagai jenis design baik itu untuk keperluan pribadi ataupun untuk bisnis anda.
+                Tapi tidaj hanya itu, kami juga menyediakan layanan dalam digital branding sebagai bentuk
+                nyata kami dalam usaha membantu bisnis anda menjadi lebih berkembang dan Kami juga
                 memiliki <strong>Creative Neko Academy</strong> sebagai pusat
-                pelatihan dan pengembangan kapasitas UMKM.
+                pelatihan dan pengembangan kapasitas UMKM. <br />
+                <br />Itu saja? Tentu tidak selain menyediakan layanan jasa kami juga akan selalu berbagai pengetahuan
+                terkait branding dan literasi digital untuk menyikapi perkembangan zaman ini
               </p>
               <button
                 onClick={() => {

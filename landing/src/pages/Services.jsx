@@ -59,8 +59,9 @@ export default function Services() {
           Layanan Creative Neko Project
         </h1>
         <p className="text-gray-300 max-w-2xl mx-auto leading-relaxed">
-          Kami menghadirkan solusi kreatif dan terintegrasi bagi UMKM: mulai dari
-          strategi brand, pemasaran digital, hingga penyelenggaraan event dan pelatihan
+          Kami menyediakan berbagai layanan design dan digital branding 
+          , mulai dari logo, website, aplikasi dan strategi pemasaran digital
+          hingga penyelenggaraan event dan pelatihan
           di <strong>Creative Neko Academy</strong>. Semua layanan kami dirancang untuk
           membantu bisnis kecil dan menengah berkembang lebih cepat di era digital.
         </p>

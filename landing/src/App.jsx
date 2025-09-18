@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+
 // component
 import Navbar from './component/Navbar.jsx'
 import Footer from './component/Footer.jsx'
@@ -19,19 +20,37 @@ import DashboardUser from './pages/DashboardUser.jsx'
 import DashboardEvent from './pages/DashboardEvent.jsx'
 import Signup from './pages/Signup.jsx'
 import EventRegister from "./pages/EventRegister";
+import NotFound from "./pages/NotFound.jsx";
 
 function AppContent() {
   const location = useLocation();
 
+  //untuk ngedeteksi route 
+  const knownPaths = [
+    "/", "/services", "/event",
+    "/portfolio", "/contact",
+    "/dashboard", "/dashboarduser", "/dashboardevent",
+    "/login", "/signup", "/home",
+  ];
+
+  // cek dynamic path 
+  const isKnownPath = knownPaths.some(path => location.pathname === path) ||
+    location.pathname.startsWith("/events/") ||
+    location.pathname.startsWith("/portfolio/") ||
+    location.pathname.startsWith("/event-register/");
+
+  const is404 = !isKnownPath; 
+
   // path yang navbar-nya disembunyikan
-  const hideNavbarOn = ["/login", "/signup", "/dashboard", "/dashboarduser", "/dashboardevent"];
+  const hideNavbarOn = ["/login", "/signup", "/dashboard","/dashboarduser", "/dashboardevent",];
+
   // path yang footer-nya disembunyikan
-  const hideFooterOn = ["/login", "/signup", "/contact", "/dashboard", "/dashboarduser", "/dashboardevent"];
+  const hideFooterOn = ["/login", "/signup", "/contact", "/dashboard", "/dashboarduser", "/dashboardevent",];
 
   return (
     <div className="min-h-screen bg-gray-900">
-      {/* Navbar tampil kalau path sekarang tidak ada di hideNavbarOn */}
-      {!hideNavbarOn.includes(location.pathname.toLowerCase()) && <Navbar />}
+      {/* Navbar tampil kalau bukan path yang disembunyikan dan bukan 404 */}
+      {!hideNavbarOn.includes(location.pathname.toLowerCase()) && !is404 && <Navbar />}
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -83,10 +102,13 @@ function AppContent() {
             </ProtectedRoute>
           }
         />
+
+        {/* Halaman NotFound */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
-      {/* Footer tampil kalau path sekarang tidak ada di hideFooterOn */}
-      {!hideFooterOn.includes(location.pathname.toLowerCase()) && <Footer />}
+      {/* Footer tampil kalau bukan path yang disembunyikan dan bukan 404 */}
+      {!hideFooterOn.includes(location.pathname.toLowerCase()) && !is404 && <Footer />}
     </div>
   );
 }
