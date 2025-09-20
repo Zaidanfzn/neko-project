@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Image from "/src/assets/img/kocing.png";
+import Image from "/src/assets/img/kucing.png";
 
 const NotFound = () => {
   const navigate = useNavigate();
