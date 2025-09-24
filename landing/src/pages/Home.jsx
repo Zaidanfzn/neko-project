@@ -232,10 +232,10 @@ pembuatan kampanye digital, hingga optimasi pemasaran online agar penjualan meni
         </section>
 
         {/* Events Section */}
-        <section id="events" className="w-full py-20">
+        <section id="events" className="w-full py-20 bg-gray-800">
           <div className="max-w-7xl mx-auto px-6">
             <h2 className="text-4xl font-bold text-yellow-400 mb-12">
-              Event Mendatang
+              Event Creative Neko Academy
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               <div className="bg-gray-800 border border-gray-700 rounded-lg p-8 card-hover hover-effect">
@@ -243,27 +243,29 @@ pembuatan kampanye digital, hingga optimasi pemasaran online agar penjualan meni
                   Webinar: Strategi Digital UMKM 2024
                 </h3>
                 <p className="text-gray-400 mb-4">
-                  15 November 2024 | 19:00 - 21:00 WIB — Pelajari bagaimana
+                  15 April 2025 | 19:00 - 21:00 WIB — Pelajari bagaimana
                   memanfaatkan media sosial dan kampanye online untuk meningkatkan penjualan produk UMKM Anda.
                 </p>
-                <a href="eventdetail.jsx" target="_blank" rel="noopener noreferrer">
-                  <button className="btn-hover px-6 py-2 rounded-lg font-semibold">
-                    Daftar Sekarang
-                  </button>
-                </a>
+                <button
+                  onClick={() => navigate("/events/1")}
+                  className="px-6 py-2 rounded-lg font-semibold bg-yellow-400 text-black hover:bg-yellow-500 hover:shadow-lg transition-all"
+                >
+                  Daftar Sekarang
+                </button>
               </div>
               <div className="bg-gray-800 border border-gray-700 rounded-lg p-8 card-hover hover-effect">
                 <h3 className="text-2xl font-semibold text-yellow-400 mb-4">
                   Workshop Offline: Branding & Identitas Visual
                 </h3>
                 <p className="text-gray-400 mb-4">
-                  22 November 2024 | 09:00 - 16:00 WIB (Jakarta) — Workshop intensif untuk membantu UMKM menyusun strategi branding dan desain visual agar bisnis terlihat lebih profesional.
+                  22 April 2025| 09:00 - 16:00 WIB (Jakarta) — Workshop intensif untuk membantu UMKM menyusun strategi branding dan desain visual agar bisnis terlihat lebih profesional.
                 </p>
-                <a href="https://linkpendaftaranworkshop.com" target="_blank" rel="noopener noreferrer">
-                  <button className="btn-hover px-6 py-2 rounded-lg font-semibold">
-                    Daftar Sekarang
-                  </button>
-                </a>
+                <button
+                  onClick={() => navigate("/events/2")}
+                  className="px-6 py-2 rounded-lg font-semibold bg-yellow-400 text-black hover:bg-yellow-500 hover:shadow-lg transition-all"
+                >
+                  Daftar Sekarang
+                </button>
               </div>
             </div>
             <div className="text-center">

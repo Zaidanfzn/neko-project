@@ -2,7 +2,23 @@ import Iklan from "../assets/img/iklan.jpeg";
 import Web from "../assets/img/web.jpg";
 import Brand from "../assets/img/branding.jpg";
 
-export const events = [
+// Helper cek tanggal sudah lewat atau belum
+function isEventPast(dateStr) {
+  try {
+    const [day, monthName, year] = dateStr.split(" ");
+    const months = {
+      Januari: 0, Februari: 1, Maret: 2, April: 3, Mei: 4, Juni: 5,
+      Juli: 6, Agustus: 7, September: 8, Oktober: 9, November: 10, Desember: 11,
+    };
+    const monthIndex = months[monthName];
+    const date = new Date(year, monthIndex, day);
+    return date < new Date();
+  } catch {
+    return false;
+  }
+}
+
+const rawEvents = [
   {
     id: 1,
     title: "Webinar Digital Marketing UMKM",
@@ -186,7 +202,7 @@ export const events = [
   {
     id: 10,
     title: "Webinar TikTok Ads",
-    date: "5 Juni 2025",
+    date: "5 Oktober 2025",
     time: "19:00 WIB",
     place: "Online",
     img: Web,
@@ -203,3 +219,9 @@ export const events = [
     },
   },
 ];
+
+// Export events dengan isPast otomatis
+export const events = rawEvents.map((ev) => ({
+  ...ev,
+  isPast: isEventPast(ev.date),
+}));
