@@ -48,7 +48,7 @@ const AppNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [user, setUser] = useState(null);
   const [isAdmin, setIsAdmin] = useState(false);
-
+  const [showUserMenu, setShowUserMenu] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
 
   // state notif
@@ -138,14 +138,58 @@ const AppNavbar = () => {
       <nav className="fixed top-0 z-50 w-full bg-gray-900/80 backdrop-blur-md border-b border-gray-700">
         <div className="max-w-screen-xl mx-auto px-6">
           <div className="flex items-center justify-between h-16">
-            <div className="flex items-center gap-4">
+            {/* Logo + User */}
+            <div className="flex items-center gap-4 relative">
               <RouterLink to="/">
                 <img src={logo} alt="logo" className="h-10 cursor-pointer" />
               </RouterLink>
+
+              {/* Dropdown user */}
               {user && (
-                <span className="text-yellow-400 font-semibold hidden sm:inline-block">
-                  Haloo! {user.name}
-                </span>
+                <div className="relative">
+                  <button
+                    onClick={() => setShowUserMenu((prev) => !prev)}
+                    className="flex items-center gap-2 text-yellow-400 font-semibold hover:text-yellow-300 transition"
+                  >
+                    Haloo! {user.name}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className={`h-4 w-4 transform transition-transform ${
+                        showUserMenu ? "rotate-180" : ""
+                      }`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+
+                  {/* Panel dropdown */}
+                  {showUserMenu && (
+                    <div className="absolute right-0 mt-2 w-40 bg-gray-800 rounded-lg shadow-lg border border-gray-700 py-2 z-50">
+                      <RouterLink
+                        to="/profile-user"
+                        onClick={() => setShowUserMenu(false)}
+                        className="block px-4 py-2 text-sm text-white hover:bg-gray-700"
+                      >
+                        Profil Saya
+                      </RouterLink>
+                      <RouterLink
+                        to="/event-user"
+                        onClick={() => setShowUserMenu(false)}
+                        className="block px-4 py-2 text-sm text-white hover:bg-gray-700"
+                      >
+                        Event Saya
+                      </RouterLink>
+                    </div>
+                  )}
+                </div>
               )}
             </div>
 

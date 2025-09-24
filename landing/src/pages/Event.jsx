@@ -1,21 +1,20 @@
-// src/pages/Event.jsx
+
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom"; // tambah useNavigate
+import { Link, useNavigate } from "react-router-dom";
 import { Pagination } from "@heroui/react";
-import { events as initialEvents } from "../data/event"; // Sesuaikan path
-import LogoIcon from "../assets/img/kucing.png"; // Sesuaikan path
+import { events as initialEvents } from "../data/event";
+import LogoIcon from "../assets/img/kucing.png";
 
 export default function Event() {
   const itemsPerPage = 3;
   const [page, setPage] = useState(1);
   const [activeFilter, setActiveFilter] = useState("All");
-  const [events, setEvents] = useState([]); // State gabungan
-  const navigate = useNavigate(); // tambah navigate
+  const [events, setEvents] = useState([]);
+  const navigate = useNavigate();
 
-  // Load events dari localStorage saat komponen mount
+
   useEffect(() => {
     const storedEvents = JSON.parse(localStorage.getItem("events") || "[]");
-    // Gabungkan initialEvents + storedEvents, hindari duplikat ID
     const allEvents = [...initialEvents];
     storedEvents.forEach((newEvent) => {
       if (!allEvents.some((e) => e.id === newEvent.id)) {
@@ -23,11 +22,11 @@ export default function Event() {
       }
     });
     setEvents(allEvents);
-  }, []); // Hanya jalan sekali saat mount
+  }, []);
 
   const filteredEvents =
     activeFilter === "All"
-      ? events // Gunakan state `events`, bukan initialEvents
+      ? events
       : events.filter((e) => e.category === activeFilter);
 
   const totalPages = Math.ceil(filteredEvents.length / itemsPerPage);
@@ -38,10 +37,9 @@ export default function Event() {
 
   const filterCategories = ["All", "Online", "Offline"];
 
-  // Tambahan: handle lihat detail agar pindah halaman & otomatis ke atas
   const handleViewDetail = (id) => {
     navigate(`/events/${id}`);
-    window.scrollTo({ top: 0, behavior: "auto" }); // langsung ke atas
+    window.scrollTo({ top: 0, behavior: "auto" });
   };
 
   return (

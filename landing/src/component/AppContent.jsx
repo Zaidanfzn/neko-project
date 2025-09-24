@@ -1,4 +1,3 @@
-// src/component/AppContent.jsx
 import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
@@ -23,6 +22,10 @@ import Signup from '../pages/Signup.jsx';
 import EventRegister from "../pages/EventRegister";
 import NotFound from "../pages/NotFound.jsx";
 
+//menu dropdown
+import EventUser from "../dropdown/EventUser.jsx";
+import ProfileUser from "../dropdown/ProfileUser.jsx";
+
 export default function AppContent() {
   const location = useLocation();
 
@@ -30,7 +33,7 @@ export default function AppContent() {
     "/", "/services", "/event",
     "/portfolio", "/contact",
     "/dashboard", "/dashboarduser", "/dashboardevent",
-    "/login", "/signup", "/home",
+    "/login", "/signup", "/home", "/profile-user", "/event-user"
   ];
 
   const isKnownPath = knownPaths.some(path => location.pathname === path) ||
@@ -53,6 +56,8 @@ export default function AppContent() {
         <Route path="/event" element={<Event />} />
         <Route path="/events/:id" element={<EventDetail />} />
         <Route path="/event-register/:id" element={<EventRegister />} />
+        <Route path="/event-user" element={<EventUser />} />
+        <Route path="/profile-user" element={<ProfileUser />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/portfolio/:id" element={<PortfolioDetail />} />
         <Route path="/contact" element={<Contact />} />
