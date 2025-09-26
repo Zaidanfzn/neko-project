@@ -107,7 +107,7 @@ const rawEvents = [
   {
     id: 5,
     title: "Workshop Copywriting untuk UMKM",
-    date: "8 Mei 2025",
+    date: "4 Oktober 2025",
     time: "10:00 WIB",
     place: "Offline Surabaya",
     img: Brand,
@@ -126,7 +126,7 @@ const rawEvents = [
   {
     id: 6,
     title: "Webinar Instagram Marketing",
-    date: "12 Mei 2025",
+    date: "12 Oktober 2025",
     time: "19:00 WIB",
     place: "Online",
     img: Web,
@@ -145,7 +145,7 @@ const rawEvents = [
   {
     id: 7,
     title: "Workshop Fotografi Produk",
-    date: "20 Mei 2025",
+    date: "1 November 2025",
     time: "09:00 WIB",
     place: "Offline Yogyakarta",
     img: Iklan,
