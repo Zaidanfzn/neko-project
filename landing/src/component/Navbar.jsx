@@ -17,7 +17,7 @@ const AlertToast = ({ visible, leaving, title, message }) => {
     >
       <div className="flex items-start justify-between">
         <div className="flex items-start space-x-3">
-          <div className="flex-shrink-0 mt-0.5 text-green-400">
+          <div className="flex-shrink-0 mt-0.5 text-yellow-400">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-4 w-4"
@@ -224,17 +224,18 @@ const AppNavbar = () => {
                 </div>
               ))}
 
+              {/* tombol login/logout desktop */}
               {user ? (
                 <button
                   onClick={() => setShowConfirm(true)}
-                  className="text-white hover:text-yellow-400 transition"
+                  className="px-4 py-1.5 rounded-full bg-gradient-to-r from-yellow-500 to-yellow-700 text-white font-semibold hover:from-yellow-600 hover:to-yellow-800 shadow-md transition"
                 >
                   Logout
                 </button>
               ) : (
                 <RouterLink
                   to="/login"
-                  className="text-white hover:text-yellow-400 transition"
+                  className="px-4 py-1.5 rounded-full bg-gradient-to-r from-yellow-500 to-yellow-700 text-white font-semibold hover:from-yellow-600 hover:to-yellow-800 shadow-md transition"
                 >
                   Login
                 </RouterLink>
@@ -302,11 +303,11 @@ const AppNavbar = () => {
                 </div>
               ))}
 
-              <div className="px-4 py-2 border-t border-gray-700">
+              <div className="px-4 py-2 border-t border-gray-400">
                 {user ? (
                   <button
                     onClick={() => setShowConfirm(true)}
-                    className="block w-full text-white text-lg hover:text-yellow-400 transition"
+                    className="block w-full text-center px-4 py-2 rounded-full bg-gradient-to-r from-yellow-500 to-yellow-700 text-white font-semibold hover:from-yellow-600 hover:to-yellow-800 shadow-md transition"
                   >
                     Logout
                   </button>
@@ -314,7 +315,7 @@ const AppNavbar = () => {
                   <RouterLink
                     to="/login"
                     onClick={closeMenu}
-                    className="block w-full text-white text-lg hover:text-yellow-400 transition"
+                    className="block w-full text-center px-4 py-2 rounded-full bg-gradient-to-r from-yellow-500 to-yellow-700 text-white font-semibold hover:from-yellow-600 hover:to-yellow-800 shadow-md transition"
                   >
                     Login
                   </RouterLink>

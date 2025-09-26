@@ -164,7 +164,7 @@ const rawEvents = [
   {
     id: 8,
     title: "Webinar Marketplace Optimization",
-    date: "25 Mei 2025",
+    date: "1 Oktober 2025",
     time: "19:00 WIB",
     place: "Online",
     img: Web,
@@ -183,7 +183,7 @@ const rawEvents = [
   {
     id: 9,
     title: "Workshop Desain Kemasan",
-    date: "30 Mei 2025",
+    date: "20 Oktober 2025",
     time: "09:00 WIB",
     place: "Offline Semarang",
     img: Brand,
