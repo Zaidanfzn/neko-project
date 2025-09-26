@@ -187,7 +187,7 @@ export default function EventUser() {
               </button>
               <button
                 onClick={confirmCancelRegistration}
-                className="px-4 py-2 rounded-lg bg-yellow-500 hover:bg-yellow-400 text-black font-semibold"
+                className="px-4 py-2 rounded-lg bg-green-500 hover:bg-green-400 text-black font-semibold"
               >
                 Ya, Batalkan
               </button>
