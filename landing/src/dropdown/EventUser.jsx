@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { events } from "/src/data/event";
 
-/** Alert Toast dengan efek blur ala navbar */
+/** Alert Toast  **/
 const AlertToast = ({ visible, leaving, title, message }) => {
   if (!visible) return null;
   return (
